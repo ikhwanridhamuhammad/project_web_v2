@@ -67,9 +67,10 @@
 	$____dash_grafik_omset				= "";
 	$____dash_counter_data				= 0;
 	$____dash_counter_status			= 0;
-	$____dash_db_data_nitro = mysqli_query($__konek_nitro,"select * from data_today order by no");
+	$____data_today 							= "data_today";
+	$____dash_db_data_nitro = mysqli_query($__konek_nitro,"select * from $____data_today order by no");
 	while ($____dash_data = mysqli_fetch_array($____dash_db_data_nitro)){
-		$____dash_device_id[$____dash_counter_data] 					= $____dash_data['device_id'];
+		$____dash_device_id[$____dash_counter_data] 					= $____dash_data['device_id_pol'];
 		$____dash_ban_tambah_motor[$____dash_counter_data] 		= $____dash_data['ban_tambah_motor'];
 		$____dash_ban_tambah_mobil[$____dash_counter_data] 		= $____dash_data['ban_tambah_mobil'];
 		$____dash_ban_isi_baru_motor[$____dash_counter_data] 	= $____dash_data['ban_isi_baru_motor'];

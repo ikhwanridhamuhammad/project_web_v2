@@ -13,11 +13,11 @@
   $___deta_outlet = array(100);
   $___deta_omset = array(100);
   $___deta_counter = 0;
-	$query_best = "SELECT data_today.total_rupiah, data_today.device_id FROM data_today ORDER BY total_rupiah DESC";
+	$query_best = "SELECT * FROM $__db_nama_data ORDER BY total_rupiah DESC";
   $result_best = $__konek_nitro->query($query_best); 
   while ($____dash_data_today = mysqli_fetch_array($result_best)){
     $___device_id         = $____dash_data_today['device_id'];
-    $query_outlet_best    = "SELECT building.code_id, building.name FROM building WHERE building.code_id = '$___device_id' ";
+    $query_outlet_best    = "SELECT * FROM building WHERE building.code_id = '$___device_id' AND building.user_id = '$_global_user_id' ";
     $result_outlet_best   = $__konek_absensi->query($query_outlet_best); 
     $row_outlet_best      = $result_outlet_best->fetch_assoc();
     $___deta_outlet[$___deta_counter] = $row_outlet_best['name'];
@@ -59,7 +59,7 @@
 		$tanggal = $tanggal_update_today;
     $ok = 0;
     $filter = "presence_date='$tanggal' ";
-    $query_outlet = "SELECT building.code_id,building.building_id,building.name,building.hrg_tambah_motor,building.hrg_tambah_mobil,building.hrg_isi_baru_motor,building.hrg_isi_baru_mobil,building.hrg_tambal_motor,building.hrg_tambal_mobil FROM building WHERE building.user_id = '$_global_user_id' ";
+    $query_outlet = "SELECT * FROM building WHERE building.user_id = '$_global_user_id' ";
     $result_outlet = $__konek_absensi->query($query_outlet);
     while ($____dash_data = mysqli_fetch_array($result_outlet)){
       $hsl_code_id = $____dash_data['code_id'];
@@ -67,20 +67,7 @@
       $____deta_outlet[$____deta_counter] = $____dash_data['name']; 
       // echo "-".$____dash_data['name']."<br>";
       // echo "-->".$____dash_data['building_id']."<br>";
-      $query_karyawan = "SELECT shift.shift_name,shift.shift_id,presence.shift_id,presence.user_id,presence.building_id,presence.employees_id,employees.employees_name,employees.employees_nickname,employees.id,
-        presence.picture_in,
-        presence.picture_out,
-        presence.present_id,
-        presence.information,
-        presence.final_glass,
-        presence.total_small_glass,
-        presence.total_big_glass,
-        presence.total_sticker,
-        presence.total_straw_small,
-        presence.total_straw_big,
-        presence.total_plastic_small,
-        presence.total_plastic_big,
-        presence.time_in,presence.time_out FROM presence,employees,shift WHERE presence.building_id = '$hsl_outlet' AND shift.shift_id = presence.shift_id AND presence.employees_id = employees.id AND presence.user_id = '$_global_user_id' AND $filter ";
+      $query_karyawan = "SELECT * FROM presence,employees,shift WHERE presence.building_id = '$hsl_outlet' AND shift.shift_id = presence.shift_id AND presence.employees_id = employees.id AND presence.user_id = '$_global_user_id' AND $filter ";
       $result_karyawan = $__konek_absensi->query($query_karyawan);  
       $hit_var = 1;
       $str_var = "";
@@ -127,7 +114,8 @@
       //==========================================================================================
       // echo $str_var."<br>";
       // echo $str_shft."<br>";
-      $query_sn = "SELECT data_today.ban_tambah_motor,data_today.ban_tambah_mobil,data_today.ban_isi_baru_motor,data_today.ban_isi_baru_mobil,data_today.waktu, data_today.device_id FROM data_today WHERE data_today.device_id = '$hsl_code_id' ";
+      $__db_nama_data_2 = $__db_nama_data.".device_id";
+      $query_sn = "SELECT * FROM $__db_nama_data WHERE $__db_nama_data_2 = '$hsl_code_id' ";
       $result_sn = $__konek_nitro->query($query_sn);  
       $row_sn      = $result_sn->fetch_assoc();
       $____deta_total_motor[$____deta_counter] = $row_sn['ban_tambah_motor']+$row_sn['ban_isi_baru_motor'];

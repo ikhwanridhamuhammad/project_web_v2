@@ -9,6 +9,9 @@
 	$_SESSION["_po_tahun_bulan"] = "";
 	$_SESSION["_po_outlet"] = "";
 	$_SESSION["_po_karyawan"] = "";
+	$_SESSION["_po_sn_tahun_bulan"] = "";
+	$_SESSION["_po_sn_outlet"] = "";
+	$_SESSION["_po_sn_karyawan"] = "";
 	$_SESSION["_ra_edit_absensi"] = "";
 	$_SESSION["_ssn_tahun_bulan"] = "";
 	$_SESSION["_ssn_outlet"] = "";

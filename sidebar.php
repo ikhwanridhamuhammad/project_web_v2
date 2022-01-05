@@ -44,14 +44,31 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="./pemasukan_outlet.php" class="nav-link <?php if($_global_page_program == 4){echo "active";} ?>">
+
+          <li class="nav-item has-treeview <?php if($_global_page_program == 4 || $_global_page_program == 10){echo "menu-open";} ?>">
+            <a href="#" class="nav-link <?php if($_global_page_program == 4 || $_global_page_program ==10){echo "active";} ?>">
               <i class="nav-icon fas fa-chart-line"></i>
               <p>
                 Pemasukan Outlet
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./pemasukan_outlet_sn.php" class="nav-link <?php if($_global_page_program == 10){echo "active";} ?>">  
+                  <i class="far fa-arrow-alt-circle-right nav-icon"></i>
+                  <p>Smart Nitro</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./pemasukan_outlet.php" class="nav-link <?php if($_global_page_program == 4){echo "active";} ?>"> 
+                  <i class="far fa-arrow-alt-circle-right nav-icon"></i>
+                  <p>Real Laporan</p>
+                </a>
+              </li>
+            </ul>
           </li>
+
           <li class="nav-item has-treeview <?php if($_global_page_program >= 5 && $_global_page_program <=6){echo "menu-open";} ?>">
             <a href="#" class="nav-link <?php if($_global_page_program >= 5 && $_global_page_program <=6){echo "active";} ?>">
               <i class="nav-icon fas fa-random"></i>

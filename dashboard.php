@@ -167,11 +167,11 @@
                             <td style="text-align: center"><span class="badge badge-danger">OFF</span></td>
                             <?php
                           }
-                          echo "<td>";
+                          echo "<td><b>";
                           echo $___dash_nama[$_free_counter]." "; ?>
                                 <small><span class="badge badge-warning"><?php echo $____dash_waktu[$_free_counter]." Menit"; ?></span></small>
                           <?php
-                          echo "</td>"; ?>
+                          echo "</b></td>"; ?>
 
                           <td style="text-align: center"><?php echo "Rp ".number_format($____total_omset_outlet[$_free_counter],0,',','.'); ?></td>
                           <?php

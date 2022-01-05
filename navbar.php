@@ -16,7 +16,8 @@
   <link rel="stylesheet" href="./plugins/toastr/toastr.min.css">
   <link rel="stylesheet" href="./plugins/datatables-bs4/css/dataTables.bootstrap4.css">
   <link rel="stylesheet" href="./plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- daterange picker -->   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+  <!-- daterange picker -->   
+  <link rel="stylesheet" href="./plugins/daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="./plugins/summernote/summernote-bs4.css">
   <!-- Bootstrap Color Picker -->
   <link rel="stylesheet" href="./plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">

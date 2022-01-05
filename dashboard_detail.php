@@ -145,7 +145,7 @@
                           }
                           // ==========================================
                           echo "<td>";
-                          echo "<b>".$____deta_outlet[$_free_counter]."</b>"." - "."<small>".$____deta_waktu[$_free_counter]." Menit"."</small>"; ?>
+                          echo "<b>".$____deta_outlet[$_free_counter]."</b>"." - "."<span class='badge badge-warning'><small><b>".$____deta_waktu[$_free_counter]." Menit"."</b></small></span>"; ?>
                           <?php
                           echo "</td>";
                           $nama1="";$nama2="";$nama3="";$nama4="";$nama5="";
