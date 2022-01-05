@@ -48,15 +48,15 @@
       else {$__hasil_email_sama = 2;}
       //===============================================================================
       if($__hasil_email_sama == 0){ // tidak ada yang sama
-        // $____su_query_insert = "INSERT INTO employees 
-        //                     ( user_id,employees_code,employees_email,employees_password,employees_name,employees_nickname,
-        //                       birthday,phone,address,photo,created_login,created_cookies)
-        //                     values
-        //                     ( '$_global_user_id','$___post_su_nik_input','$___post_su_email_input','$____password',
-        //                       '$___post_su_nama_input','$___post_su_nickname_input','$___post_su_birthday_input',
-        //                       '$___post_su_telp_input','$___post_su_alamat_input','$____photo',
-        //                       '$____create_login','$____create_cookies' ) ";  
-        // $____su_result_insert   = $__konek_absensi->query($____su_query_insert); 
+        $____su_query_insert = "INSERT INTO employees 
+                            ( user_id,employees_code,employees_email,employees_password,employees_name,employees_nickname,
+                              birthday,phone,address,photo,created_login,created_cookies)
+                            values
+                            ( '$_global_user_id','$___post_su_nik_input','$___post_su_email_input','$____password',
+                              '$___post_su_nama_input','$___post_su_nickname_input','$___post_su_birthday_input',
+                              '$___post_su_telp_input','$___post_su_alamat_input','$____photo',
+                              '$____create_login','$____create_cookies' ) ";  
+        $____su_result_insert   = $__konek_absensi->query($____su_query_insert); 
 
         ?>
         <script type="text/javascript">

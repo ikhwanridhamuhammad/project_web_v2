@@ -2,9 +2,9 @@
 
 <?php 
   $_global_page_program = 9; // 1 dashboard
-  include_once '../../admin/program/global_var.php';
-  include_once '../../admin/program/database.php';
-  include_once '../../admin/program/date_time.php';
+  include_once '../program/global_var.php';
+  include_once '../program/database.php';
+  include_once '../program/date_time.php';
 
   $_id = "";
   $_act = "";
