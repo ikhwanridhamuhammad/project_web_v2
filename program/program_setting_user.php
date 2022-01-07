@@ -55,7 +55,7 @@
 		$_su_ttl[$_su_counter]						= $_KONVERT_DATE_1;
 		$_su_telp[$_su_counter]						= $_su_data_karyawan['phone'];
 		$_su_alamat[$_su_counter]					= $_su_data_karyawan['address'];
-		$_su_foto[$_su_counter]						= $_su_data_karyawan['photo'];
+		$_su_foto[$_su_counter]						= "../karyawan/karyawan/".$_su_data_karyawan['photo'];
 		$_su_counter++;
 
 	}

@@ -22,8 +22,8 @@
   $__ea_outlet			= $__ea_row_id['name'];
   $__ea_tanggal 		= date_format(date_create($__ea_row_id['presence_date']),"d F Y");
   $__ea_kwh					= $__ea_row_id['total_plastic_big'];
-  $__ea_picture_in	= $__ea_row_id['picture_in'];
-  $__ea_picture_out = $__ea_row_id['picture_out'];
+  $__ea_picture_in	= "../karyawan/absent/".$__ea_row_id['picture_in'];
+  $__ea_picture_out = "../karyawan/absent/".$__ea_row_id['picture_out'];
   $__ea_information	= $__ea_row_id['information'];
   $__ea_omset 			= $__ea_row_id['final_glass'];
   $__ea_tambal_motor= $__ea_row_id['total_small_glass'];

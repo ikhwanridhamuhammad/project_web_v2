@@ -66,27 +66,30 @@
 	//=================================================================== 
 	$____po_hari						= array("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
 	$____po_hari_nomor			= 0;		
-	$____po_tanggal 				= array(150);
-	$____po_TANGGAL_GR   		= array(150);
-	$____po_omset 					= array(150);
-	$____po_OMSET_TAMBAL_GR	= array(150);
-	$____po_OMSET_GR				= array(150);
+	$____po_tanggal 				= array(1500);
+	$____po_TANGGAL_GR   		= array(1500);
+	$____po_omset 					= array(1500);
+	$____po_OMSET_TAMBAL_GR	= array(1500);
+	$____po_OMSET_GR				= array(1500);
 	$____po_omset_total_outlet = 0;
-	$____po_karyawan 				= array(150);
-	$____po_shift 					= array(150);
-	$____po_check_in				= array(150);
-	$____po_check_out				= array(150);
-	$____po_kwh							= array(150);
-	$____po_tambal_motor		= array(150);
-	$____po_tambal_mobil		= array(150);
-	$____po_omset_tambal		= array(150);
-	$____po_promo_motor			= array(150);
-	$____po_promo_mobil			= array(150);
-	$____po_error_motor			= array(150);
-	$____po_error_mobil			= array(150);
-	$____po_information			= array(150);
-	$____po_picture_in			= array(150);
-	$____po_picture_out			= array(150);
+	$____po_karyawan 				= array(1500);
+	$____po_shift 					= array(1500);
+	$____po_check_in				= array(1500);
+	$____po_check_out				= array(1500);
+	$____po_check_in_p				= array(1500);
+	$____po_check_out_p				= array(1500);
+	$____po_check_telat				= array(1500);
+	$____po_kwh							= array(1500);
+	$____po_tambal_motor		= array(1500);
+	$____po_tambal_mobil		= array(1500);
+	$____po_omset_tambal		= array(1500);
+	$____po_promo_motor			= array(1500);
+	$____po_promo_mobil			= array(1500);
+	$____po_error_motor			= array(1500);
+	$____po_error_mobil			= array(1500);
+	$____po_information			= array(1500);
+	$____po_picture_in			= array(1500);
+	$____po_picture_out			= array(1500);
 	$____po_counter 				= 0;
 	$____po_omset_tertinggi = 0;
 	//===================================================================
@@ -110,7 +113,7 @@
 			$____po_tanggal_titip						= date_create($____po_TANGGAL_GR[$COUNT_DATE]);
 			$____po_hari_nomor						  = date_format($____po_tanggal_titip,"w");
 		}
-		$____query_outlet = "SELECT * FROM building,employees,presence,shift WHERE presence.presence_date BETWEEN '$__tanggal_start' AND '$__tanggal_end' AND employees.id = presence.employees_id AND presence.building_id = building.building_id AND building.name = '$_ses_po_outlet' AND presence.shift_id = shift.shift_id ";
+		$____query_outlet = "SELECT *, presence.time_in AS time_in_p , presence.time_out AS time_out_p FROM building,employees,presence,shift WHERE presence.presence_date BETWEEN '$__tanggal_start' AND '$__tanggal_end' AND employees.id = presence.employees_id AND presence.building_id = building.building_id AND building.name = '$_ses_po_outlet' AND presence.shift_id = shift.shift_id ";
 	  $____result_outlet = $__konek_absensi->query($____query_outlet);
 	  while ($____po_data_outlet = mysqli_fetch_array($____result_outlet)){
 	  	//------------------------------------------------
@@ -133,8 +136,8 @@
 	  	$____po_shift[$____po_counter] 			= $____po_data_outlet['shift_name'];
 
         $____po_kwh[$____po_counter]                   = $____po_data_outlet['total_plastic_big'];
-        $____po_picture_in[$____po_counter]            = $____po_data_outlet['picture_in'];
-        $____po_picture_out[$____po_counter]           = $____po_data_outlet['picture_out'];
+        $____po_picture_in[$____po_counter]            = "../karyawan/absent/".$____po_data_outlet['picture_in'];
+        $____po_picture_out[$____po_counter]           = "../karyawan/absent/".$____po_data_outlet['picture_out'];
         $____po_information[$____po_counter]           = $____po_data_outlet['information'];
         $____po_tambal_motor[$____po_counter]          = $____po_data_outlet['total_small_glass'];
         $____po_tambal_mobil[$____po_counter]          = $____po_data_outlet['total_big_glass'];
@@ -144,6 +147,10 @@
         $____po_promo_mobil[$____po_counter]           = $____po_data_outlet['total_plastic_small'];
 				$____po_check_in[$____po_counter]							 = $____po_data_outlet['time_in'];
 				$____po_check_out[$____po_counter]						 = $____po_data_outlet['time_out'];
+				$____po_check_in_p[$____po_counter]							 = $____po_data_outlet['time_in_p'];
+				$____po_check_out_p[$____po_counter]						 = $____po_data_outlet['time_out_p'];
+				$____po_check_telat[$____po_counter] = 0;
+				if($____po_check_in_p[$____po_counter] > $____po_check_in[$____po_counter]){$____po_check_telat[$____po_counter] = 1;}
 				$____po_omset_tambal[$____po_counter] = 
 	  							(		($____po_data_outlet['hrg_tambal_motor'] * $____po_data_outlet['total_small_glass']) +
 	  									($____po_data_outlet['hrg_tambal_mobil'] * $____po_data_outlet['total_big_glass']) ) ;

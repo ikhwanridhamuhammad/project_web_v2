@@ -64,6 +64,7 @@
                           <th style="text-align: center;vertical-align: middle">Nama Karyawan</th>
                           <th style="text-align: center;vertical-align: middle">Nickname</th>
                           <th style="text-align: center;vertical-align: middle">EMAIL</th>
+                          <!--<th style="text-align: center;vertical-align: middle">foto</th>-->
                           <th style="text-align: center;vertical-align: middle">Password</th>
                           <th style="text-align: center;vertical-align: middle">Status</th>
                           <th style="text-align: center;vertical-align: middle">Aksi</th>
@@ -85,6 +86,7 @@
                                         <td style="text-align: center"><?php echo $_su_nama[$_free_counter]; ?></td>
                                         <td style="text-align: center"><?php echo $_su_nickname[$_free_counter]; ?></td>
                                         <td style="text-align: center"><?php echo $_su_email[$_free_counter]; ?></td>
+                                        <!--<td style="text-align: center"><?php echo $_su_foto[$_free_counter]; ?></td>-->
                                         <td style="text-align: center">
                                           <?php if($_su_password[$_free_counter] == "Different") { ?>
                                             <a href="./hiperlink/hip_su_pass.php?id=<?php echo $_su_id[$_free_counter]; ?>">
@@ -197,7 +199,13 @@
                         <label><small><b>Foto Profil :</b></small></label>
                       </div>
                       <div class="row text-center">
-                        <img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> 
+                          <!--2021-11-0195b0990c6a4770300af80f109414d318.jpg-->
+                          <!--http://localhost/abc/def/geh/assets/images/image.jpg-->
+                          <!--mirovtech.net/sw-content/karyawan/2021-11-0195b0990c6a4770300af80f109414d318.jpg-->
+                        <!--<img src="../../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
+                        <!--<img src="../../mirovtech.net/sw-content/karyawan/2021-11-0195b0990c6a4770300af80f109414d318.jpg" class="product-image" alt="Product Image"> -->
+                        <!--<img src="../../../2021-11-0195b0990c6a4770300af80f109414d318.jpg" class="product-image" alt="Product Image"> -->
+                        <img src="<?php echo $_su_foto[$_free_counter]; ?>" class="product-image" alt="Product Image"> 
                       </div>
                       
                       

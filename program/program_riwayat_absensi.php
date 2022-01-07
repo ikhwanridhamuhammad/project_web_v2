@@ -52,19 +52,19 @@
  	$_kondisi = 0;
 	//================================================================================
  	if($_ses_ra_outlet == "ALL" && $_ses_ra_karyawan == "ALL"){
-		$__ra_query_karyawan = "SELECT * FROM presence,employees,building WHERE presence.presence_date BETWEEN '$_ses_ra_tanggal_start' AND '$_ses_ra_tanggal_end' AND presence.user_id = '$_global_user_id' AND presence.employees_id = employees.id AND presence.building_id = building.building_id ORDER BY presence.presence_date DESC"; 		
+		$__ra_query_karyawan = "SELECT *, presence.time_in AS time_in_p , presence.time_out AS time_out_p  FROM presence,employees,building,shift WHERE presence.presence_date BETWEEN '$_ses_ra_tanggal_start' AND '$_ses_ra_tanggal_end' AND presence.user_id = '$_global_user_id' AND presence.shift_id = shift.shift_id AND presence.employees_id = employees.id AND presence.building_id = building.building_id ORDER BY presence.presence_date DESC"; 		
 		$_kondisi = 1;
  	}
  	if($_ses_ra_outlet == "ALL" && $_ses_ra_karyawan != "ALL"){
-		$__ra_query_karyawan = "SELECT * FROM presence,employees,building WHERE presence.presence_date BETWEEN '$_ses_ra_tanggal_start' AND '$_ses_ra_tanggal_end' AND presence.user_id = '$_global_user_id' AND presence.employees_id = employees.id AND presence.building_id = building.building_id AND employees.employees_name = '$_ses_ra_karyawan'  ";
+		$__ra_query_karyawan = "SELECT *, presence.time_in AS time_in_p , presence.time_out AS time_out_p  FROM presence,employees,building,shift WHERE presence.presence_date BETWEEN '$_ses_ra_tanggal_start' AND '$_ses_ra_tanggal_end' AND presence.user_id = '$_global_user_id' AND presence.shift_id = shift.shift_id AND presence.employees_id = employees.id AND presence.building_id = building.building_id AND employees.employees_name = '$_ses_ra_karyawan'  ";
 		$_kondisi = 2; 		
  	}
  	if($_ses_ra_outlet != "ALL" && $_ses_ra_karyawan == "ALL"){
-		$__ra_query_karyawan = "SELECT * FROM presence,employees,building WHERE presence.presence_date BETWEEN '$_ses_ra_tanggal_start' AND '$_ses_ra_tanggal_end' AND presence.user_id = '$_global_user_id' AND presence.employees_id = employees.id AND presence.building_id = building.building_id AND building.name = '$_ses_ra_outlet'  ORDER BY presence.presence_date DESC "; 
+		$__ra_query_karyawan = "SELECT *, presence.time_in AS time_in_p , presence.time_out AS time_out_p  FROM presence,employees,building,shift WHERE presence.presence_date BETWEEN '$_ses_ra_tanggal_start' AND '$_ses_ra_tanggal_end' AND presence.user_id = '$_global_user_id' AND presence.shift_id = shift.shift_id AND presence.employees_id = employees.id AND presence.building_id = building.building_id AND building.name = '$_ses_ra_outlet'  ORDER BY presence.presence_date DESC "; 
 		$_kondisi = 3;		
  	}
  	if($_ses_ra_outlet != "ALL" && $_ses_ra_karyawan != "ALL"){
-		$__ra_query_karyawan = "SELECT * FROM presence,employees,building WHERE presence.presence_date BETWEEN '$_ses_ra_tanggal_start' AND '$_ses_ra_tanggal_end' AND presence.user_id = '$_global_user_id' AND presence.employees_id = employees.id AND presence.building_id = building.building_id AND building.name = '$_ses_ra_outlet' AND employees.employees_name = '$_ses_ra_karyawan'  ORDER BY presence.presence_date DESC ";		
+		$__ra_query_karyawan = "SELECT *, presence.time_in AS time_in_p , presence.time_out AS time_out_p  FROM presence,employees,building,shift WHERE presence.presence_date BETWEEN '$_ses_ra_tanggal_start' AND '$_ses_ra_tanggal_end' AND presence.user_id = '$_global_user_id' AND presence.shift_id = shift.shift_id AND presence.employees_id = employees.id AND presence.building_id = building.building_id AND building.name = '$_ses_ra_outlet' AND employees.employees_name = '$_ses_ra_karyawan'  ORDER BY presence.presence_date DESC ";		
 		$_kondisi = 4;
  	}
 	//================================================================================
@@ -73,10 +73,14 @@
  	$__ra_presence_id				= array(3000);
  	$__ra_nama_karyawan			= array(3000);
  	$__ra_nama_outlet				= array(3000);
+ 	$__ra_nama_shift				= array(3000);
  	$__ra_tanggal 					= array(3000);
  	$__ra_tanggal_2  				= array(3000);
  	$__ra_check_in					= array(3000);
  	$__ra_check_out					= array(3000);
+ 	$__ra_check_in_p					= array(3000);
+ 	$__ra_check_out_p					= array(3000);
+ 	$__ra_check_telat					= array(3000);
  	$__ra_kwh								= array(3000);
  	$__ra_picture_in				= array(3000);
  	$__ra_picture_out				= array(3000);
@@ -95,12 +99,13 @@
 		$__ra_presence_id[$__ra_counter]		= $__ra_data_karyawan['presence_id'];
 		$__ra_nama_karyawan[$__ra_counter]	= $__ra_data_karyawan['employees_name'];
 		$__ra_nama_outlet[$__ra_counter]		= $__ra_data_karyawan['name'];
+		$__ra_nama_shift[$__ra_counter]		= $__ra_data_karyawan['shift_name'];
 		$__ra_tanggal[$__ra_counter]				= date_format(date_create($__ra_data_karyawan['presence_date']),"d-m-Y");
 		$__ra_tanggal_2[$__ra_counter]			= date_format(date_create($__ra_data_karyawan['presence_date']),"d F Y");
 
         $__ra_kwh[$__ra_counter]                   = $__ra_data_karyawan['total_plastic_big'];
-        $__ra_picture_in[$__ra_counter]            = $__ra_data_karyawan['picture_in'];
-        $__ra_picture_out[$__ra_counter]           = $__ra_data_karyawan['picture_out'];
+        $__ra_picture_in[$__ra_counter]            = "../karyawan/absent/".$__ra_data_karyawan['picture_in'];
+        $__ra_picture_out[$__ra_counter]           = "../karyawan/absent/".$__ra_data_karyawan['picture_out'];
         $__ra_information[$__ra_counter]           = $__ra_data_karyawan['information'];
         $__ra_omset[$__ra_counter]                 = $__ra_data_karyawan['final_glass'];
         $__ra_tambal_motor[$__ra_counter]          = $__ra_data_karyawan['total_small_glass'];
@@ -112,6 +117,11 @@
 
 		$__ra_check_in[$__ra_counter]				= $__ra_data_karyawan['time_in'];
 		$__ra_check_out[$__ra_counter]			= $__ra_data_karyawan['time_out'];
+		$__ra_check_in_p[$__ra_counter]				= $__ra_data_karyawan['time_in_p'];
+		$__ra_check_out_p[$__ra_counter]			= $__ra_data_karyawan['time_out_p'];
+ 	    $__ra_check_telat[$__ra_counter] = 0;
+		if($__ra_check_in_p[$__ra_counter] > $__ra_check_in[$__ra_counter]){$__ra_check_telat[$__ra_counter] = 1;}
+ 	    
 		$__ra_counter++;
 	}
 ?>

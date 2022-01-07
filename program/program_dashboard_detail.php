@@ -87,8 +87,8 @@
         $_deta_shift[$_deta_coounter]                 = $____dash_data_ok['shift_name'];
         $_deta_shift_in[$_deta_coounter]              = $____dash_data_ok['time_in'];
         $_deta_shift_out[$_deta_coounter]             = $____dash_data_ok['time_out'];
-        $_deta_picture_in[$_deta_coounter]            = $____dash_data_ok['picture_in'];
-        $_deta_picture_out[$_deta_coounter]           = $____dash_data_ok['picture_out'];
+        $_deta_picture_in[$_deta_coounter]            = "../karyawan/absent/".$____dash_data_ok['picture_in'];
+        $_deta_picture_out[$_deta_coounter]           = "../karyawan/absent/".$____dash_data_ok['picture_out'];
         $_deta_present_id[$_deta_coounter]            = $____dash_data_ok['present_id'];
         $_deta_information[$_deta_coounter]           = $____dash_data_ok['information'];
         $_deta_omset[$_deta_coounter]                 = $____dash_data_ok['final_glass'];

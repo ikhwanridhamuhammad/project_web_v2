@@ -201,7 +201,8 @@
                             <label><small><b>Photo Check In :</b></small></label>
                           </div>
                           <div class="row text-center">
-                            <img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> 
+                            <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
+                            <img src="<?php echo $__ea_picture_in; ?>" class="product-image" alt="Product Image">
                           </div>
                     </div>
                   </div>
@@ -214,7 +215,8 @@
                             <label><small><b>Photo Check Out :</b></small></label>
                           </div>
                           <div class="row text-center">
-                            <img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> 
+                            <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
+                            <img src="<?php echo $__ea_picture_out; ?>" class="product-image" alt="Product Image"> 
                           </div>
                     </div>
                   </div>

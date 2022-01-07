@@ -135,7 +135,11 @@
                                       <td style="text-align: center"><?php echo $_free_counter+1; ?></td>
                                       <td style="text-align: center"><?php echo $____po_karyawan[$_free_counter]; ?></td>
                                       <td style="text-align: center"><?php echo $____po_tanggal[$_free_counter]; ?></td>
-                                      <td style="text-align: center"><?php echo $____po_shift[$_free_counter]; ?></td>
+                                      <td style="text-align: center"><?php echo $____po_shift[$_free_counter]; ?>&nbsp;&nbsp;
+                                        <?php if($____po_check_telat[$_free_counter] == 1){ ?>
+                                            <span class="badge badge-danger">Telat</span>
+                                        <?php } ?>
+                                      </td>
                                       <td style="text-align: center"><?php echo "Rp ".number_format($____po_omset_tambal[$_free_counter],2,',','.'); ?></td>
                                       <td style="text-align: center"><?php echo "Rp ".number_format($____po_omset[$_free_counter],2,',','.'); ?></td>
                                       <td style="text-align: center">
@@ -230,8 +234,12 @@
                       </ul>
                       <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-clock"></i></span>
-                          <b>&nbsp;&nbsp;Shift IN: </b> <?php echo $____po_check_in[$_free_counter]; ?><br/>
-                          <b>&nbsp;&nbsp;Shift Out : </b> <?php echo $____po_check_out[$_free_counter]; ?><br/>
+                          <b>&nbsp;&nbsp;SHIFT : </b> <?php echo $____po_shift[$_free_counter]; ?>&nbsp;&nbsp;
+                            <?php if($____po_check_telat[$_free_counter] == 1){ ?>
+                                <span class="badge badge-danger">Telat</span>
+                            <?php } ?><br/>
+                          <b>&nbsp;&nbsp;Shift IN: </b> <?php echo $____po_check_in_p[$_free_counter];?><br/>
+                          <b>&nbsp;&nbsp;Shift Out : </b> <?php echo $____po_check_out_p[$_free_counter]; ?><br/>
                         </li>
                       </ul>
                       <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
@@ -269,13 +277,17 @@
                         <label><small><b>Check In :</b></small></label>
                       </div>
                       <div class="row text-center">
-                        <img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> 
+                        <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
+                        <img src="<?php echo $____po_picture_in[$_free_counter]; ?>" class="product-image" alt="Product Image"> 
                       </div>
                       <div class="row">
                         <label><small><b>Check Out :</b></small></label>
                       </div>
                       <div class="row text-center">
-                        <img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> 
+                        <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
+                        <?php if($____po_check_out_p[$_free_counter] != "00:00:00") { ?>
+                            <img src="<?php echo $____po_picture_out[$_free_counter]; ?>" class="product-image" alt="Product Image">
+                        <?php } ?>
                       </div>
                       
                       

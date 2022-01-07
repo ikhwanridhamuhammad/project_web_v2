@@ -121,6 +121,7 @@
                             <th style="text-align: center;vertical-align: middle">Nama</th>
                             <th style="text-align: center;vertical-align: middle">Tanggal</th>
                             <th style="text-align: center;vertical-align: middle">Outlet</th>
+                            <th style="text-align: center;vertical-align: middle">SHIFT</th>
                             <th style="text-align: center;vertical-align: middle">Check In</th>
                             <th style="text-align: center;vertical-align: middle">Check Out</th>
                             <th style="text-align: center;vertical-align: middle">Aksi</th>
@@ -133,8 +134,13 @@
                               <td><?php echo $__ra_nama_karyawan[$__ra_free_counter]; ?></td>
                               <td style="text-align: center"><?php echo $__ra_tanggal[$__ra_free_counter]; ?></td>
                               <td style="text-align: center"><?php echo $__ra_nama_outlet[$__ra_free_counter]; ?></td>
-                              <td style="text-align: center"><?php echo $__ra_check_in[$__ra_free_counter]; ?></td>
-                              <td style="text-align: center"><?php echo $__ra_check_out[$__ra_free_counter]; ?></td>
+                              <td style="text-align: center"><?php echo $__ra_nama_shift[$__ra_free_counter]; ?>&nbsp;&nbsp;
+                                        <?php if($__ra_check_telat[$__ra_free_counter] == 1){ ?>
+                                            <span class="badge badge-danger">Telat</span>
+                                        <?php } ?>
+                              </td>
+                              <td style="text-align: center"><?php echo $__ra_check_in_p[$__ra_free_counter]; ?></td>
+                              <td style="text-align: center"><?php echo $__ra_check_out_p[$__ra_free_counter]; ?></td>
                               <td style="text-align: center">
                                 <a href="#" data-toggle="modal" data-target="<?php echo "#modal".$__ra_free_counter; ?>">
                                 <span class="badge badge-info">View</span></a>
@@ -182,8 +188,12 @@
                       </ul>
                       <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-clock"></i></span>
-                          <b>&nbsp;&nbsp;Shift IN: </b> <?php echo $__ra_check_in[$_free_counter]; ?><br/>
-                          <b>&nbsp;&nbsp;Shift Out : </b> <?php echo $__ra_check_out[$_free_counter]; ?><br/>
+                          <b>&nbsp;&nbsp;SHIFT : </b> <?php echo $__ra_nama_shift[$_free_counter]; ?>&nbsp;&nbsp;
+                                        <?php if($__ra_check_telat[$_free_counter] == 1){ ?>
+                                            <span class="badge badge-danger">Telat</span>
+                                        <?php } ?><br/>
+                          <b>&nbsp;&nbsp;Shift IN: </b> <?php echo $__ra_check_in_p[$_free_counter]; ?><br/>
+                          <b>&nbsp;&nbsp;Shift Out : </b> <?php echo $__ra_check_out_p[$_free_counter]; ?><br/>
                         </li>
                       </ul>
                       <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
@@ -221,13 +231,17 @@
                         <label><small><b>Check In :</b></small></label>
                       </div>
                       <div class="row text-center">
-                        <img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> 
+                        <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
+                        <img src="<?php echo $__ra_picture_in[$_free_counter]; ?>" class="product-image" alt="Product Image"> 
                       </div>
                       <div class="row">
                         <label><small><b>Check Out :</b></small></label>
                       </div>
                       <div class="row text-center">
-                        <img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> 
+                        <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
+                        <?php if($__ra_check_out[$_free_counter] != "00:00:00"){ ?>
+                            <img src="<?php echo $__ra_picture_out[$_free_counter]; ?>" class="product-image" alt="Product Image"> 
+                        <?php } ?>
                       </div>
                       
                       

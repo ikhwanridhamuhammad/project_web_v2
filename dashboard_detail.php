@@ -227,7 +227,8 @@
                       </ul>
                     </div>
                     <div class="col-6 text-center">
-                      <img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image">
+                      <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image">-->
+                      <img src="<?php echo $_deta_picture_in[$_free_counter]; ?>" class="product-image" alt="Product Image"> 
                     </div>
                   </div>
                   <div class="row">
