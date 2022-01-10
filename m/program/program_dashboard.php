@@ -29,9 +29,8 @@
 	$___dash_hrg_tambal_mobil 	= array(100);
 	$___dash_grafik_nama				= "";
 	$___dash_counter_data				= 0;
-	$___dash_db_data_today = mysqli_query($__konek_absensi,"select * from building order by building_id");
+	$___dash_db_data_today = mysqli_query($__konek_absensi,"select * from building where building.user_id = '$_global_user_id' order by building_id");
 	while ($___dash_data = mysqli_fetch_array($___dash_db_data_today)){
-		if($___dash_data['user_id'] == $_global_user_id){
 			$___dash_building_id[$___dash_counter_data] 					= $___dash_data['building_id'];
 			$___dash_code_id[$___dash_counter_data] 							= $___dash_data['code_id'];
 			$___dash_nama[$___dash_counter_data] 									= $___dash_data['name'];
@@ -44,7 +43,6 @@
 			// $___dash_grafik_nama 																 .= $___dash_data["name"].",";
 			$___dash_grafik_nama       													 .= "'".$___dash_data["name"]."',";
 			$___dash_counter_data++;
-		}
 	}
 	$___dash_grafik_nama = substr($___dash_grafik_nama, 0 , -1);
 
@@ -94,7 +92,7 @@
 	//=====================CEK JUMLAH KARYAWAN TODAY======================================
 	//====================================================================================
 	$_____dash_counter_data 	 = 0;
-	$_____dash_db_data_absensi = mysqli_query($__konek_absensi,"select * from presence where presence_date = '$global_date' order by presence_id");
+	$_____dash_db_data_absensi = mysqli_query($__konek_absensi,"select * from presence where presence_date = '$global_date' and presence.user_id = '$_global_user_id' order by presence_id");
 	while ($_____dash_data = mysqli_fetch_array($_____dash_db_data_absensi)){$_____dash_counter_data++;}
 
 

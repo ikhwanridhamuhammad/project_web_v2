@@ -4,11 +4,11 @@
 	// $_global_db_nama = "contoh";
 	// $_global_user_id = 2;
     $__global_run = 1;
-	// $_global_db_nama = $_SESSION["global_db_nama"];
-	// $_global_user_id = $_SESSION["global_user_id"];
+	$_global_db_nama = $_SESSION["global_db_nama"];
+	$_global_user_id = $_SESSION["global_user_id"];
 
-	$_global_db_nama = "nuril";
-	$_global_user_id = 3;
+// 	$_global_db_nama = "nuril";
+// 	$_global_user_id = 3;
 	$_global_selisih_menit_online = 30;
 	//=================================================================================
 	//=================================================================================

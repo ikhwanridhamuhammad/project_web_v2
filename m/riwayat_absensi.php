@@ -105,7 +105,7 @@
                 </div>
                 <div class="card-body pt-0">
                   <div class="row">
-                    <div class="col-6">
+                    <div class="col-8">
                       <h2 class="lead"><b><?php echo $__ra_nama_karyawan[$_free_counter]; ?></b></h2>
                       <ul class="ml-2 mb-0 fa-ul text-muted">
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-home"></i></span>
@@ -159,7 +159,7 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                       <div class="row">
                         <label><small><b>Check In :</b></small></label>
                       </div>
@@ -172,7 +172,7 @@
                       </div>
                       <div class="row text-center">
                         <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
-                        <?php if($__ra_check_out[$_free_counter] != "00:00:00"){ ?>
+                        <?php if($__ra_check_out_p[$_free_counter] != "00:00:00"){ ?>
                             <img src="<?php echo $__ra_picture_out[$_free_counter]; ?>" class="product-image" alt="Product Image"> 
                         <?php } ?>
                       </div>

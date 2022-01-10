@@ -2,7 +2,7 @@
     error_reporting(0);
     ob_start();
     session_start();
-    include_once '../admin/program/database.php';
+    include_once '../program/database.php';
     if($_SESSION['admin_top'])
     {
         header("location:./index.php");

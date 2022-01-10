@@ -239,7 +239,7 @@
                       </div>
                       <div class="row text-center">
                         <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
-                        <?php if($__ra_check_out[$_free_counter] != "00:00:00"){ ?>
+                        <?php if($__ra_check_out_p[$_free_counter] != "00:00:00"){ ?>
                             <img src="<?php echo $__ra_picture_out[$_free_counter]; ?>" class="product-image" alt="Product Image"> 
                         <?php } ?>
                       </div>
