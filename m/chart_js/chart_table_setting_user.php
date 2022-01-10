@@ -159,8 +159,8 @@
   $(function () {
     $("#example1").DataTable();
     $('#example2').DataTable({
-      "lengthChange": true,
-      "searching": true,
+      "lengthChange": false,
+      "searching": false,
       "ordering": false,
       "info": true,
       "autoWidth": false,

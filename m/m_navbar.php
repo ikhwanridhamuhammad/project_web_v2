@@ -67,23 +67,37 @@ scrollMSG();
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <!-- Left navbar links -->
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a href="./dashboard.php" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a href="./dashboard_detail.php" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard Detail</a>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-tachometer-alt"></i> Dashboard</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="./dashboard.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Dashboard Today</a></li>
+              <li><a href="./dashboard_detail.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Dashboard Detail</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="./hiperlink/hip_ra_m.php" class="nav-link"><i class="fas fa-calendar-alt"></i> Riwayat Absensi</a>
           </li>
-          <li class="nav-item">
-            <a href="./hiperlink/hip_po_sn_m.php" class="nav-link"><i class="fa fa-chart-line"></i> Pemasukan Outlet SN</a>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-chart-line"></i> Pemasukan Outlet</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="./hiperlink/hip_po_sn_m.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Pemasukan Outlet SN</a></li>
+              <li><a href="./hiperlink/hip_po_m.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Pemasukan Outlet Real</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a href="./hiperlink/hip_po_m.php" class="nav-link"><i class="fa fa-chart-line"></i> Pemasukan Outlet Real</a>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-random"></i> Smart Nitro</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="#" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Selisih Smart Nitro</a></li>
+              <li><a href="./hiperlink/hip_dsn_m.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Data Smart Nitro</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a href="./hiperlink/hip_dsn_m.php" class="nav-link"><i class="fa fa-random"></i> Data Smart Nitro</a>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-cogs"></i> Master</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="./setting_outlet.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Setting Outlet</a></li>
+              <li><a href="./setting_shift.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Setting Shift</a></li>
+              <li><a href="./setting_user.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Setting User</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="./logout.php" class="nav-link"><i class="fa fa-power-off"></i> Logout</a>

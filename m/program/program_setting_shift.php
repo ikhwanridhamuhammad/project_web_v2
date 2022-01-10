@@ -19,7 +19,7 @@
 	$_ss_time_out						= array(300);
 
 	$_ss_counter_shift			= 0;
-	$_ss_query_shift   	= "SELECT * FROM building,shift WHERE building.building_id = shift.building_id AND building.user_id = '$_global_user_id' ";
+	$_ss_query_shift   	= "SELECT * FROM building,shift WHERE building.building_id = shift.building_id AND building.user_id = '$_global_user_id' ORDER BY building.code_id ";
 	$_ss_result_outlet  	= $__konek_absensi->query($_ss_query_shift); 
 	while ($_ss_data_outlet = mysqli_fetch_array($_ss_result_outlet)){
 		$_ss_outlet[$_ss_counter_shift]							= $_ss_data_outlet['name'];
