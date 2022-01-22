@@ -60,8 +60,8 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <div class="row mb-3 mt-2 text-sm">
-                    <div class="col-6">
+                  <div class="row text-sm">
+                    <div class="col-12">
                       <label>&nbsp;&nbsp;NIK Karyawan :</label>
                       <div class="input-group">
                         <div class="input-group-prepend">
@@ -73,7 +73,9 @@
                             value="<?php echo $_su_add_value_nik; ?>">
                       </div>
                     </div>
-                    <div class="col-6">
+                  </div>
+                  <div class="row text-sm">
+                    <div class="col-12">
                       <label>&nbsp;&nbsp;Email :</label>
                       <div class="input-group">
                         <div class="input-group-prepend">
@@ -86,8 +88,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row mb-3 mt-2 text-sm">
-                    <div class="col-6">
+                  <div class="row text-sm">
+                    <div class="col-12">
                       <label>&nbsp;&nbsp;Nama :</label>
                       <div class="input-group">
                         <div class="input-group-prepend">
@@ -99,7 +101,9 @@
                             value="<?php echo $_su_add_value_nama; ?>">
                       </div>
                     </div>
-                    <div class="col-6">
+                  </div>
+                  <div class="row text-sm">
+                    <div class="col-12">
                       <label>&nbsp;&nbsp;Nickname :</label>
                       <div class="input-group">
                         <div class="input-group-prepend">
@@ -112,8 +116,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row mb-3 mt-2 text-sm">
-                    <div class="col-6">
+                  <div class="row text-sm">
+                    <div class="col-12">
                       <label>&nbsp;&nbsp;Tanggal Lahir :</label>
                       <div class="input-group date">
                         <div class="input-group-prepend">
@@ -125,7 +129,9 @@
                           value="" data-date-end-date="0d">
                       </div>
                     </div>
-                    <div class="col-6">
+                  </div>
+                  <div class="row text-sm">
+                    <div class="col-12">
                       <label>&nbsp;&nbsp;Telepon :</label>
                       <div class="input-group">
                         <div class="input-group-prepend">
@@ -138,7 +144,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row mb-3 mt-2 text-sm">
+                  <div class="row mb-3 text-sm">
                     <div class="col-12">
                       <label>&nbsp;&nbsp;Alamat :</label>
                       <div class="input-group">
@@ -152,7 +158,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row text-sm">
+                  <div class="row mt-2 text-sm">
                     <div class="col-3">
                     </div>
                     <div class="col-6">

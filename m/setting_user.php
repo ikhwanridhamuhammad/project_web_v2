@@ -3,13 +3,13 @@
   <?php
     error_reporting(0);
     session_start();
-    include_once './program/global_var_run.php';
+    include './program/global_var_run.php';
       if($_SESSION['admin_top'] || $__global_run == 1){
   ?>
 
   <?php 
-  include_once './program/program_setting_user.php';
-  include_once './m_navbar.php';
+  include './program/program_setting_user.php';
+  include './m_navbar.php';
   //===============================================================================================
   
   //===============================================================================================
@@ -78,12 +78,12 @@
                                           <b>
                                           <?php echo $_su_nama[$_free_counter]; ?>
                                           </b>
-                                          <i class="fas fa-long-arrow-alt-right"></i>
+                                          <br>
                                           <?php echo $_su_nik[$_free_counter]; ?>
                                           <br>
                                           <?php echo $_su_email[$_free_counter]; ?>
                                           <br>
-                                          Password
+                                          Pass
                                           <i class="fas fa-long-arrow-alt-right"></i>
                                             <?php if($_su_password[$_free_counter] == "Different") { ?>
                                               <a href="./hiperlink/hip_su_pass.php?id=<?php echo $_su_id[$_free_counter]; ?>">
@@ -247,7 +247,7 @@
   
 
   <?php
-  include_once './m_footer.php';
+  include './m_footer.php';
   ?>
 
 

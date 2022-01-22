@@ -161,6 +161,7 @@
     $('#example2').DataTable({
       "lengthChange": false,
       "searching": false,
+      "pageLength": 7,
       "ordering": false,
       "info": true,
       "autoWidth": false,

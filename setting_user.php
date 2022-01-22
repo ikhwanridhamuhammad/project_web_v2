@@ -59,7 +59,7 @@
                     <table id="example2" class="table table-bordered">
                       <thead class="thead-light">
                         <tr>
-                          <th style="text-align: center;vertical-align: middle">NO</th>
+                          <th style="text-align: center;vertical-align: middle ; width: 4%">NO</th>
                           <th style="text-align: center;vertical-align: middle">NIK</th>
                           <th style="text-align: center;vertical-align: middle">Nama Karyawan</th>
                           <th style="text-align: center;vertical-align: middle">Nickname</th>
@@ -67,7 +67,7 @@
                           <!--<th style="text-align: center;vertical-align: middle">foto</th>-->
                           <th style="text-align: center;vertical-align: middle">Password</th>
                           <th style="text-align: center;vertical-align: middle">Status</th>
-                          <th style="text-align: center;vertical-align: middle">Aksi</th>
+                          <th style="text-align: center;vertical-align: middle ; width: 6%">Aksi</th>
                         </tr>
                       </thead> 
 
@@ -81,13 +81,13 @@
                                   <?php 
                                     for($_free_counter = 0; $_free_counter < $_su_counter ; $_free_counter++){ ?>
                                       <tr>
-                                        <td style="text-align: center"><?php echo $_free_counter+1; ?></td>
-                                        <td style="text-align: center"><?php echo $_su_nik[$_free_counter]; ?></td>
-                                        <td style="text-align: center"><?php echo $_su_nama[$_free_counter]; ?></td>
-                                        <td style="text-align: center"><?php echo $_su_nickname[$_free_counter]; ?></td>
-                                        <td style="text-align: center"><?php echo $_su_email[$_free_counter]; ?></td>
+                                        <td style="text-align: center;vertical-align: middle"><?php echo $_free_counter+1; ?></td>
+                                        <td style="text-align: center;vertical-align: middle"><?php echo $_su_nik[$_free_counter]; ?></td>
+                                        <td style="text-align: center;vertical-align: middle"><?php echo $_su_nama[$_free_counter]; ?></td>
+                                        <td style="text-align: center;vertical-align: middle"><?php echo $_su_nickname[$_free_counter]; ?></td>
+                                        <td style="text-align: center;vertical-align: middle"><?php echo $_su_email[$_free_counter]; ?></td>
                                         <!--<td style="text-align: center"><?php echo $_su_foto[$_free_counter]; ?></td>-->
-                                        <td style="text-align: center">
+                                        <td style="text-align: center;vertical-align: middle">
                                           <?php if($_su_password[$_free_counter] == "Different") { ?>
                                             <a href="./hiperlink/hip_su_pass.php?id=<?php echo $_su_id[$_free_counter]; ?>">
                                           <?php }?>
@@ -97,7 +97,7 @@
                                           
                                           <span class="badge badge-<?php echo $_su_password_color[$_free_counter]; ?>"><i class="fa fa-lock"></i>&nbsp;&nbsp;<?php echo $_su_password[$_free_counter]; ?></span></a>
                                         </td>
-                                        <td style="text-align: center">
+                                        <td style="text-align: center;vertical-align: middle">
                                           <?php if($_su_hapus[$_free_counter] == "Aktif") { ?>
                                             <a href="./hiperlink/hip_su_hapus.php?id=<?php echo $_su_id[$_free_counter]; ?>&act=aktif">
                                           <?php }?>
@@ -115,11 +115,11 @@
 
                                             &nbsp;&nbsp;<?php echo $_su_hapus[$_free_counter]; ?></span></a>
                                         </td>
-                                        <td style="text-align: center">
+                                        <td style="text-align: center;vertical-align: middle">
                                           <a href="#" data-toggle="modal" data-target="<?php echo "#modal".$_free_counter; ?>">
-                                          <span class="badge badge-warning"><i class="fa fa-eye"></i>&nbsp;&nbsp;View</span></a>&nbsp;&nbsp;
+                                          <span class="badge badge-warning"><i class="fa fa-eye"></i>View</span></a><br>
                                           <a href="./hiperlink/hip_su_edit.php?id=<?php echo $_su_id[$_free_counter]; ?>&action=edit">
-                                          <span class="badge badge-warning"><i class="fa fa-edit"></i>&nbsp;&nbsp;Edit</span></a>
+                                          <span class="badge badge-warning"><i class="fa fa-edit"></i>Edit</span></a>
                                         </td>
                                       </tr>
                                         <?php

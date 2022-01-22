@@ -42,9 +42,6 @@
                       <label>&nbsp;&nbsp;Tanggal :</label>
                       <div class="input-group date">
                         <div class="input-group-prepend">
-                          <span class="input-group-text">
-                            <i class="fa fa-calendar-minus fa-sm"></i>
-                          </span>
                         </div>
                         <input type="text" class="form-control float-right" name="date_dsn_1" id="date_dsn_1" 
                               value="<?php echo $_dsn_value_date; ?>" data-date-end-date="0d">
@@ -117,7 +114,7 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <div class="info-box mb-3 bg-navy">
+                      <div class="info-box bg-navy">
                         <span class="info-box-icon"><i class="fas fa-car"></i></span>
 
                         <div class="info-box-content">
@@ -128,15 +125,23 @@
                     </div>
 
                   </div>
-                  <div class="row mt-2">
-                    <div class="col-12">
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="row">
+                  <div class="col-12">
 
-                      <div class="position-relative mb-4">
+                      <div class="position-relative">
                         <canvas id="areaChart" height="290"></canvas>
                       </div>
-                    </div>
-                    <div class="col-12"> 
-                      <table id="example2" class="table  table-striped table-valign-middle">
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="row">
+                  <div class="col-12">
+                      <table id="example2" class="table  table-bordered table-striped table-valign-middle">
                         <thead>
                           <tr>
                             <th rowspan="2" style="text-align: center;vertical-align: middle">No</th>
@@ -145,10 +150,10 @@
                             <th colspan="2" style="text-align: center;vertical-align: middle">Isi Baru</th>
                           </tr>
                           <tr>
-                            <th style="text-align: center;vertical-align: middle">Motor <i class="fa fa-motorcycle"></i></th>
-                            <th style="text-align: center;vertical-align: middle">Mobil <i class="fa fa-car"></i></th>
-                            <th style="text-align: center;vertical-align: middle">Motor <i class="fa fa-motorcycle"></i></th>
-                            <th style="text-align: center;vertical-align: middle">Mobil <i class="fa fa-car"></i></th>
+                            <th style="text-align: center;vertical-align: middle">MTR<br><i class="fa fa-motorcycle"></i></th>
+                            <th style="text-align: center;vertical-align: middle">MBL<br><i class="fa fa-car"></i></th>
+                            <th style="text-align: center;vertical-align: middle">MTR<br><i class="fa fa-motorcycle"></i></th>
+                            <th style="text-align: center;vertical-align: middle">MBL<br><i class="fa fa-car"></i></th>
                           </tr>
                         </thead> 
                             <tbody>
@@ -168,8 +173,8 @@
                             </tbody>          
                       </table>  
 
-                    </div>
-                  </div>
+                      
+                  </div>  
                 </div>
               </div>
             </div>

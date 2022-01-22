@@ -48,6 +48,7 @@
       else {$__hasil_email_sama = 2;}
       //===============================================================================
       if($__hasil_email_sama == 0){ // tidak ada yang sama
+        $____create_cookies = md5($___post_su_email_input);
         $____su_query_insert = "INSERT INTO employees 
                             ( user_id,employees_code,employees_email,employees_password,employees_name,employees_nickname,
                               birthday,phone,address,photo,created_login,created_cookies)
@@ -132,7 +133,7 @@
       //===============================================================================
       if($__hasil_email_sama == 0){ // tidak ada yang sama
 
-
+        $____create_cookies = md5($___post_su_email_input);
         $_edit              = "UPDATE employees SET 
                               employees_code        = '$___post_su_nik_input',
                               employees_email       = '$___post_su_email_input',
@@ -140,6 +141,7 @@
                               employees_nickname    = '$___post_su_nickname_input',
                               birthday              = '$___post_su_birthday_input',
                               phone                 = '$___post_su_telp_input',
+                              created_cookies       = '$____create_cookies',
                               address               = '$___post_su_alamat_input'
                               WHERE id   = '$_su_edit_id' ";
         $_result_edit       = $__konek_absensi->query($_edit); 
