@@ -146,7 +146,12 @@
 
                 <?php if($_ses_po_outlet == "ALL"){ ?>
                   <div class="row">
+                    <?php if($___po_counter>20){ ?> 
+                    <div class="col-12">
+                    <?php } ?> 
+                    <?php if($___po_counter<21){ ?> 
                     <div class="col-7">
+                    <?php } ?> 
 
                           <div class="d-flex">
                             <p class="mr-auto d-flex flex-column text-left">
@@ -160,7 +165,12 @@
                         <canvas id="areaChart" height="320" style="height: 320px;"></canvas>
                       </div>
                     </div>
+                    <?php if($___po_counter>20){ ?> 
+                    <div class="col-12">
+                    <?php } ?> 
+                    <?php if($___po_counter<21){ ?> 
                     <div class="col-5">
+                    <?php } ?> 
                           <table  id="table_po_2" class="table table-striped table-valign-middle">
                             <thead>
                               <tr>
