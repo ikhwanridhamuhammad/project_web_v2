@@ -2,7 +2,7 @@
     error_reporting(0);
     session_start();
     include_once './program/global_var_run.php';
-      if($_SESSION['admin_top'] || $__global_run == 1){
+      if($_SESSION['admin_topi'] || $__global_run == 1){
   ?>
 
   <?php 

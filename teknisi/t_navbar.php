@@ -68,22 +68,21 @@ scrollMSG();
         <!-- Left navbar links -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a href="./dash.php" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard Teknisi</a>
+            <a href="./dash.php" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
           </li>
           <li class="nav-item">
-            <a href="./data_sn.php" class="nav-link"><i class="fas fa-random"></i> Data SN Teknisi</a>
+            <a href="./data_sn.php" class="nav-link"><i class="fas fa-random"></i> Data SN</a>
           </li>
           <li class="nav-item">
-            <a href="./data_sn_real.php" class="nav-link"><i class="fas fa-random"></i> Data SN REAL Teknisi</a>
+            <a href="./data_sn_real.php" class="nav-link"><i class="fas fa-random"></i> Data SN Real</a>
+          </li>
+          <li class="nav-item">
+            <a href="./paket_data.php" class="nav-link"><i class="fas fa-bullhorn"></i> Paket Data</a>
+          </li>
+          <li class="nav-item">
+            <a href="./top_up.php" class="nav-link"><i class="fas fa-gas-pump"></i> Top Up</a>
           </li>
 
-          <li class="nav-item dropdown">
-            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-chart-line"></i> Pemasukan Outlet</a>
-            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-              <li><a href="./hiperlink/hip_po_sn_m.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Pemasukan Outlet SN</a></li>
-              <li><a href="./hiperlink/hip_po_m.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Pemasukan Outlet Real</a></li>
-            </ul>
-          </li>
           <li class="nav-item">
             <a href="./logout.php" class="nav-link"><i class="fa fa-power-off"></i> Logout</a>
           </li>

@@ -4,8 +4,8 @@
     session_start();
     include_once '../program/database.php';
     include_once './program/global_var_run.php';
-    // if($_SESSION['admin_top'])
-    if($__global_run == 1)
+    if($_SESSION['admin_topi'])
+    // if($__global_run == 1)
     {
         header("location:./index.php");
     }
@@ -120,16 +120,17 @@ scrollMSG();
 
     $email=$_POST['email'];
     $pass=$_POST['pass'];
+    $userid=100;
     $password   = hash('sha256',$salt.$pass);
 
-    $_so_query_user     = "SELECT * FROM user WHERE email = '$email' AND password = '$password' ";
+    $_so_query_user     = "SELECT * FROM user WHERE email = '$email' AND password = '$password' AND user_id = '$userid' ";
     $_so_result_user    = $__konek_absensi->query($_so_query_user); 
     $data               = $_so_result_user->fetch_assoc();
     $ketemu             = $_so_result_user->num_rows;
     if($ketemu >=1){
       $_SESSION["global_db_nama"] = $data['db_nama'];
       $_SESSION["global_user_id"] = $data['user_id'];
-      $_SESSION["admin_top"]          = $data['user_id'];
+      $_SESSION["admin_topi"]          = $data['user_id'];
       include_once '../admin/program/session_mulai.php';
       header("location:./index.php");
     }
