@@ -121,6 +121,7 @@
                             <th style="text-align: center;vertical-align: middle">Nama</th>
                             <th style="text-align: center;vertical-align: middle">Tanggal</th>
                             <th style="text-align: center;vertical-align: middle">Outlet</th>
+                            <th style="text-align: center;vertical-align: middle">Omset</th>
                             <th style="text-align: center;vertical-align: middle">SHIFT</th>
                             <th style="text-align: center;vertical-align: middle">Check In</th>
                             <th style="text-align: center;vertical-align: middle">Check Out</th>
@@ -134,6 +135,7 @@
                               <td><?php echo $__ra_nama_karyawan[$__ra_free_counter]; ?></td>
                               <td style="text-align: center"><?php echo $__ra_tanggal[$__ra_free_counter]; ?></td>
                               <td style="text-align: center"><?php echo $__ra_nama_outlet[$__ra_free_counter]; ?></td>
+                              <td style="text-align: center"><?php echo 'Rp. '.$__ra_omset[$__ra_free_counter].',-'; ?></td>
                               <td style="text-align: center"><?php echo $__ra_nama_shift[$__ra_free_counter]; ?>&nbsp;&nbsp;
                                         <?php if($__ra_check_telat[$__ra_free_counter] == 1){ ?>
                                             <span class="badge badge-danger">Telat</span>

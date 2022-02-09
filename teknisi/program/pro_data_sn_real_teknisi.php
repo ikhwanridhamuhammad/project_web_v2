@@ -50,7 +50,7 @@
   $___dsn_api       = "";
   $___dsn_aktif     = "";
   $___dsn_q_data_master = "SELECT * FROM master_id_device WHERE device_id = '$________dsn_hasl_code' ";
-  $___dsn_result_data_master = $__konek_base_new->query($___dsn_q_data_master); 
+  $___dsn_result_data_master = $__konek_base_new_1->query($___dsn_q_data_master); 
   while ($___dsn_data_master = mysqli_fetch_array($___dsn_result_data_master)){
     $___dsn_channel = $___dsn_data_master['channel'];
     $___dsn_api   = $___dsn_data_master['api'];

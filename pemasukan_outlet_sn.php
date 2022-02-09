@@ -165,6 +165,7 @@
                         <canvas id="areaChart" height="320" style="height: 320px;"></canvas>
                       </div>
                     </div>
+                    
                     <?php if($___po_counter>20){ ?> 
                     <div class="col-12">
                     <?php } ?> 

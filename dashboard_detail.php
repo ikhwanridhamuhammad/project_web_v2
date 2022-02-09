@@ -214,6 +214,7 @@
                       </ul>
                       <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-clock"></i></span>
+                          <b>&nbsp;&nbsp;Shift: </b> <?php echo $_deta_shift[$_free_counter]; ?><br/>
                           <b>&nbsp;&nbsp;Shift IN: </b> <?php echo $_deta_shift_in[$_free_counter]; ?><br/>
                           <b>&nbsp;&nbsp;Shift Out : </b> <?php echo $_deta_shift_out[$_free_counter]; ?><br/>
                         </li>

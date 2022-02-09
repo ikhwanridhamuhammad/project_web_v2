@@ -67,7 +67,7 @@
       $____deta_outlet[$____deta_counter] = $____dash_data['name']; 
       // echo "-".$____dash_data['name']."<br>";
       // echo "-->".$____dash_data['building_id']."<br>";
-      $query_karyawan = "SELECT * FROM presence,employees,shift WHERE presence.building_id = '$hsl_outlet' AND shift.shift_id = presence.shift_id AND presence.employees_id = employees.id AND presence.user_id = '$_global_user_id' AND $filter ";
+      $query_karyawan = "SELECT *,presence.time_in AS time_in_p, presence.time_out AS time_out_p FROM presence,employees,shift WHERE presence.building_id = '$hsl_outlet' AND shift.shift_id = presence.shift_id AND presence.employees_id = employees.id AND presence.user_id = '$_global_user_id' AND $filter ";
       $result_karyawan = $__konek_absensi->query($query_karyawan);  
       $hit_var = 1;
       $str_var = "";
@@ -85,8 +85,8 @@
         $_deta_kwh[$_deta_coounter]                   = $____dash_data_ok['total_plastic_big'];
         $_deta_nama_outlet[$_deta_coounter]           = $____dash_data['name'];
         $_deta_shift[$_deta_coounter]                 = $____dash_data_ok['shift_name'];
-        $_deta_shift_in[$_deta_coounter]              = $____dash_data_ok['time_in'];
-        $_deta_shift_out[$_deta_coounter]             = $____dash_data_ok['time_out'];
+        $_deta_shift_in[$_deta_coounter]              = $____dash_data_ok['time_in_p'];
+        $_deta_shift_out[$_deta_coounter]             = $____dash_data_ok['time_out_p'];
         $_deta_picture_in[$_deta_coounter]            = "../karyawan/absent/".$____dash_data_ok['picture_in'];
         $_deta_picture_out[$_deta_coounter]           = "../karyawan/absent/".$____dash_data_ok['picture_out'];
         $_deta_present_id[$_deta_coounter]            = $____dash_data_ok['present_id'];

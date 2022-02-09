@@ -89,23 +89,35 @@
 	$__ssn_omset	 			= array(1000);
 	$__ssn_omset_2 			= array(1000);
 	$__ssn_omset_detail 			= array(1000);
+	$__ssn_omset_detail_2			= array(1000);
+	$__ssn_kwh 			    = array(1000);
+	$__ssn_keterangan 		= array(1000);
 	$__ssn_tanggal 			= array(1000);
 	$__ssn_tanggal_2		= array(1000);
 	$__ssn_shift	 			= array(1000);
+	$__ssn_picture_in	= array(1000);
+	$__ssn_picture_out	= array(1000);
 	$__ssn_time_in_shift	= array(1000);
 	$__ssn_time_out_shift	= array(1000);
+	$__ssn_time_in_presence	= array(1000);
+	$__ssn_time_out_presence	= array(1000);
+	$__ssn_check_telat      = array(1000);
 	//===================================================
 	$__ssn_tambal_motor = array(1000);
 	$__ssn_tambal_mobil = array(1000);
 	$__ssn_error_motor = array(1000);
 	$__ssn_error_mobil = array(1000);
+	$__ssn_error_2_motor = array(1000);
+	$__ssn_error_2_mobil = array(1000);
+	$__ssn_promo_motor = array(1000);
+	$__ssn_promo_mobil = array(1000);
 	$__ssn_jumlah_tambal_motor = array(1000);
 	$__ssn_jumlah_tambal_mobil = array(1000);
 
 	//===================================================
 	$__ssn_tanggal_jam_jadi = "";
 	$__ssn_counter 			= 0;
-	$__ssn_query_absen = "SELECT *,shift.time_in AS check_in,shift.time_out AS check_out FROM presence,employees,building,shift WHERE presence.presence_date BETWEEN '$__tanggal_start' AND '$__tanggal_end' AND presence.shift_id = shift.shift_id AND presence.building_id = building.building_id AND presence.employees_id = employees.id AND presence.user_id = '$_global_user_id' ";
+	$__ssn_query_absen = "SELECT *,presence.time_in AS check_in_presence,presence.time_out AS check_out_presence,shift.time_in AS check_in,shift.time_out AS check_out FROM presence,employees,building,shift WHERE presence.presence_date BETWEEN '$__tanggal_start' AND '$__tanggal_end' AND presence.shift_id = shift.shift_id AND presence.building_id = building.building_id AND presence.employees_id = employees.id AND presence.user_id = '$_global_user_id' ";
 	$__ssn_result_absen = $__konek_absensi->query($__ssn_query_absen); 
 	while ($__ssn_data_absen = mysqli_fetch_array($__ssn_result_absen)){
 	  $__ssn_tanggal[$__ssn_counter] 		= date_create($__ssn_data_absen['presence_date']);
@@ -114,16 +126,30 @@
 	  $__ssn_tanggal_2[$__ssn_counter] 		= date_format($__ssn_tanggal_2[$__ssn_counter],"Y-m-d");
 	  $__ssn_outlet[$__ssn_counter] 	  = $__ssn_data_absen['name'];
 	  $__ssn_omset[$__ssn_counter] 		  = $__ssn_data_absen['final_glass'];
+	  $__ssn_kwh[$__ssn_counter] 		  = $__ssn_data_absen['total_plastic_big'];
+	  $__ssn_keterangan[$__ssn_counter] 		  = $__ssn_data_absen['information'];
 	  //==============================================================================
 	  $__ssn_tambal_motor[$__ssn_counter] 		  = $__ssn_data_absen['total_small_glass'];  // tambal motor
 	  $__ssn_tambal_mobil[$__ssn_counter] 		  = $__ssn_data_absen['total_big_glass'];		 // tambal mobil
 	  $__ssn_error_motor[$__ssn_counter] 		  = $__ssn_data_absen['total_sticker']+$__ssn_data_absen['total_straw_big']; //error motor
 	  $__ssn_error_mobil[$__ssn_counter] 		  = $__ssn_data_absen['total_straw_small']+$__ssn_data_absen['total_plastic_small']; // error mobil
+	  $__ssn_error_2_motor[$__ssn_counter] 		  = $__ssn_data_absen['total_sticker']; //error motor
+	  $__ssn_error_2_mobil[$__ssn_counter] 		  = $__ssn_data_absen['total_straw_small']; // error mobil
+	  $__ssn_promo_motor[$__ssn_counter] 		  = $__ssn_data_absen['total_straw_big']; //error motor
+	  $__ssn_promo_mobil[$__ssn_counter] 		  = $__ssn_data_absen['total_plastic_small']; // error mobil
 	  //==============================================================================
 	  $__ssn_karyawan[$__ssn_counter] 	= $__ssn_data_absen['employees_name'];
 	  $__ssn_shift[$__ssn_counter] 			= $__ssn_data_absen['shift_name'];
+	  //==============================================================================
+        $__ssn_picture_in[$__ssn_counter]            = "../karyawan/absent/".$__ssn_data_absen['picture_in'];
+        $__ssn_picture_out[$__ssn_counter]           = "../karyawan/absent/".$__ssn_data_absen['picture_out'];
 	  $__ssn_time_in_shift[$__ssn_counter] 			= $__ssn_data_absen['check_in'];
 	  $__ssn_time_out_shift[$__ssn_counter] 			= $__ssn_data_absen['check_out'];
+	  $__ssn_time_in_presence[$__ssn_counter] 			= $__ssn_data_absen['check_in_presence'];
+	  $__ssn_time_out_presence[$__ssn_counter] 			= $__ssn_data_absen['check_out_presence'];
+ 	    $__ssn_check_telat[$__ssn_counter] = 0;
+		if($__ssn_time_in_presence[$__ssn_counter] > $__ssn_time_in_shift[$__ssn_counter]){$__ssn_check_telat[$__ssn_counter] = 1;}
+	  //==============================================================================
 	  $__ssn_tanggal_jam_jadi = $__ssn_tanggal_2[$__ssn_counter]." " .$__ssn_time_in_shift[$__ssn_counter];
 	  $__ssn_time_in_shift[$__ssn_counter] = date("Y-m-d H:i:s",strtotime(date($__ssn_tanggal_jam_jadi)." +15 minutes"));
     $__ssn_time_out_shift[$__ssn_counter] = $__ssn_tanggal_2[$__ssn_counter]." ".$__ssn_time_out_shift[$__ssn_counter];
@@ -215,10 +241,11 @@
 	  									$__ssn_jumlah_tambal_mobil[$__ssn_counter];
 	  //=========================================================================
 	  //=========================================================================
-	  if(($__ssn_omset[$__ssn_counter] - $__ssn_omset2[$__ssn_counter]) < -20000){
+	  if(($__ssn_omset[$__ssn_counter] - $__ssn_omset_2[$__ssn_counter]) < -20000){
 	  	$__ssn_omset_detail[$__ssn_counter] = 0;
 	  }
 	  else{$__ssn_omset_detail[$__ssn_counter] = 1;}
+	  $__ssn_omset_detail_2[$__ssn_counter] = $__ssn_omset[$__ssn_counter] - $__ssn_omset_2[$__ssn_counter];
 	  //=========================================================================
 	  //=========================================================================
 	  $__ssn_counter++;

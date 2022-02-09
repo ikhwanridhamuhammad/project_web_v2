@@ -82,7 +82,7 @@
                                 <span class="badge badge-primary"><?php echo $____dash_waktu_ori[$_free_counter]; ?></span>&nbsp;
                                 <span class="badge badge-warning">
                                     <a href="./hiperlink/hip_dsn.php?outlet=<?php echo $____dash_name[$_free_counter]; ?>">
-                                  LIHAT</span>
+                                  LIHAT</a></span>
 
                                 <br>
                                 <span class="badge badge-success"><?php echo $____dash_user_id[$_free_counter]; ?></span>&nbsp;
