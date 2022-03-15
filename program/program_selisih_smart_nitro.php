@@ -83,6 +83,7 @@
 	$__ssn_hrg_isi_baru_mobil = array(1000);
 	$__ssn_hrg_tambal_motor = array(1000);
 	$__ssn_hrg_tambal_mobil = array(1000);
+	$__ssn_presence_id		= array(1000);
 	$__ssn_karyawan 		= array(1000);
 	$__ssn_outlet 			= array(1000);
 	$__ssn_code_id			= array(1000);
@@ -125,6 +126,7 @@
 	  $__ssn_tanggal_2[$__ssn_counter] 		= date_create($__ssn_data_absen['presence_date']);
 	  $__ssn_tanggal_2[$__ssn_counter] 		= date_format($__ssn_tanggal_2[$__ssn_counter],"Y-m-d");
 	  $__ssn_outlet[$__ssn_counter] 	  = $__ssn_data_absen['name'];
+	  $__ssn_presence_id[$__ssn_counter] 	  = $__ssn_data_absen['presence_id'];
 	  $__ssn_omset[$__ssn_counter] 		  = $__ssn_data_absen['final_glass'];
 	  $__ssn_kwh[$__ssn_counter] 		  = $__ssn_data_absen['total_plastic_big'];
 	  $__ssn_keterangan[$__ssn_counter] 		  = $__ssn_data_absen['information'];

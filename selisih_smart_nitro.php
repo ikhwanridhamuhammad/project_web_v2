@@ -139,6 +139,9 @@
                                           <?php } ?>
                                             <a href="#" data-toggle="modal" data-target="<?php echo "#modal".$_free_counter; ?>">
                                             <span class="badge badge-info">View</span></a>
+
+                                            <a href="./hiperlink/hip_ra_ssn.php?id=<?php echo $__ssn_presence_id[$_free_counter]; ?>">
+                                            <span class="badge badge-warning">Edit</span></a>
                                       
                                       </td>
 

@@ -140,6 +140,9 @@
                                         <?php if($__ra_check_telat[$__ra_free_counter] == 1){ ?>
                                             <span class="badge badge-danger">Telat</span>
                                         <?php } ?>
+                                        <?php if($__ra_check_abnormal[$__ra_free_counter] == 1){ ?>
+                                            <span class="badge badge-warning"><i class="fas fa-exclamation-circle"></i></span>
+                                        <?php } ?>
                               </td>
                               <td style="text-align: center"><?php echo $__ra_check_in_p[$__ra_free_counter]; ?></td>
                               <td style="text-align: center"><?php echo $__ra_check_out_p[$__ra_free_counter]; ?></td>
@@ -193,9 +196,23 @@
                           <b>&nbsp;&nbsp;SHIFT : </b> <?php echo $__ra_nama_shift[$_free_counter]; ?>&nbsp;&nbsp;
                                         <?php if($__ra_check_telat[$_free_counter] == 1){ ?>
                                             <span class="badge badge-danger">Telat</span>
-                                        <?php } ?><br/>
-                          <b>&nbsp;&nbsp;Shift IN: </b> <?php echo $__ra_check_in_p[$_free_counter]; ?><br/>
-                          <b>&nbsp;&nbsp;Shift Out : </b> <?php echo $__ra_check_out_p[$_free_counter]; ?><br/>
+                                        <?php } ?>
+                                        <?php if($__ra_check_abnormal[$_free_counter] == 1){ ?>
+                                            <span class="badge badge-warning"><i class="fas fa-exclamation-circle"></i></span>
+                                        <?php } ?>
+                                        <br/>
+                          <b>&nbsp;&nbsp;Shift IN: </b> <?php echo $__ra_check_in_p[$_free_counter]; ?>
+                                        <?php if($__ra_check_abnormal[$_free_counter] == 1){ ?>&nbsp;&nbsp;
+                                            <span class="badge badge-warning"><i class="fas fa-exclamation-circle"></i></span>
+                                        <?php } ?>
+
+                          <br/>
+                          <b>&nbsp;&nbsp;Shift Out : </b> <?php echo $__ra_check_out_p[$_free_counter]; ?>
+                                        <?php if($__ra_check_abnormal[$_free_counter] == 1){ ?>&nbsp;&nbsp;
+                                            <span class="badge badge-warning"><i class="fas fa-exclamation-circle"></i></span>
+                                        <?php } ?>
+
+                          <br/>
                         </li>
                       </ul>
                       <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">

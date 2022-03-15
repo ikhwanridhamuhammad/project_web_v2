@@ -1,5 +1,14 @@
 <?php
     if(isset($_POST['btn_save_data'])){
+
+      if(isset($_POST['ea_shift_input'])){
+        $___post_ea_shift_input = $_POST['ea_shift_input'];
+        $__post_ea_shift = "SELECT * FROM shift WHERE building_id = '$__ea_building_id' AND shift_name = '$___post_ea_shift_input' ";
+        $__post_ea_result_shift   = $__konek_absensi->query($__post_ea_shift); 
+        $__post_ea_shift_row      = $__post_ea_result_shift->fetch_assoc();
+        $___post_ea_shift_id      = $__post_ea_shift_row['shift_id'];
+      }
+
       if(isset($_POST['ea_tambal_motor'])){
         $___post_ea_tambal_motor = intval($_POST['ea_tambal_motor']);
       }
@@ -28,6 +37,7 @@
         $___post_ea_keterangan = $_POST['ea_keterangan'];
       }
       $__ea_query_update = "UPDATE presence SET 
+                            shift_id            = '$___post_ea_shift_id',
                             information         = '$___post_ea_keterangan',
                             final_glass         = '$___post_ea_omset',
                             total_small_glass   = '$___post_ea_tambal_motor',
@@ -41,9 +51,24 @@
       $__ea_result_update   = $__konek_absensi->query($__ea_query_update); 
 
       ?>
+
+    <?php if($__ea_no_id_menu == 1){ ?>
       <script type="text/javascript">
         window.location.href="./riwayat_absensi.php";
       </script>
+    <?php } ?>  
+    <?php if($__ea_no_id_menu == 2){ ?>
+      <script type="text/javascript">
+        window.location.href="./selisih_smart_nitro.php";
+      </script>
+    <?php } ?>  
+    <?php if($__ea_no_id_menu == 3){ ?>
+      <script type="text/javascript">
+        window.location.href="./pemasukan_outlet.php";
+      </script>
+    <?php } ?>  
+
+
     <?php
 
 

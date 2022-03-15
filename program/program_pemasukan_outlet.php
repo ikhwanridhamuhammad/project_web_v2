@@ -79,6 +79,10 @@
 	$____po_check_in_p				= array(1500);
 	$____po_check_out_p				= array(1500);
 	$____po_check_telat				= array(1500);
+ 	$____po_check_abnormal		= array(3000);
+ 	$____po_check_calc_in_1   = "";
+ 	$____po_check_calc_in_2   = "";
+ 	$____po_check_calc_in_3   = "";
 	$____po_kwh							= array(1500);
 	$____po_tambal_motor		= array(1500);
 	$____po_tambal_mobil		= array(1500);
@@ -90,6 +94,7 @@
 	$____po_information			= array(1500);
 	$____po_picture_in			= array(1500);
 	$____po_picture_out			= array(1500);
+	$____po_presence_id			= array(1500);
 	$____po_counter 				= 0;
 	$____po_omset_tertinggi = 0;
 	//===================================================================
@@ -134,6 +139,7 @@
 	  	$____po_omset[$____po_counter] 		  = $____po_data_outlet['final_glass'];
 	  	$____po_karyawan[$____po_counter] 	= $____po_data_outlet['employees_name'];
 	  	$____po_shift[$____po_counter] 			= $____po_data_outlet['shift_name'];
+	    $____po_presence_id[$____po_counter] 	  = $____po_data_outlet['presence_id'];
 
         $____po_kwh[$____po_counter]                   = $____po_data_outlet['total_plastic_big'];
         $____po_picture_in[$____po_counter]            = "../karyawan/absent/".$____po_data_outlet['picture_in'];
@@ -151,6 +157,13 @@
 				$____po_check_out_p[$____po_counter]						 = $____po_data_outlet['time_out_p'];
 				$____po_check_telat[$____po_counter] = 0;
 				if($____po_check_in_p[$____po_counter] > $____po_check_in[$____po_counter]){$____po_check_telat[$____po_counter] = 1;}
+
+		 	  $____po_check_calc_in_1 = abs(substr($____po_check_in[$____po_counter],0,2))*60 + abs(substr($____po_check_in[$____po_counter],3,5));
+		 	  $____po_check_calc_in_2 = abs(substr($____po_check_in_p[$____po_counter],0,2))*60 + abs(substr($____po_check_in_p[$____po_counter],3,5));
+		 	  $____po_check_calc_in_3 = abs($____po_check_calc_in_1 - $____po_check_calc_in_2);
+		 	  $____po_check_abnormal[$____po_counter] = 0;
+		 	  if($____po_check_calc_in_3 > 180){$____po_check_abnormal[$____po_counter] = 1;}
+
 				$____po_omset_tambal[$____po_counter] = 
 	  							(		($____po_data_outlet['hrg_tambal_motor'] * $____po_data_outlet['total_small_glass']) +
 	  									($____po_data_outlet['hrg_tambal_mobil'] * $____po_data_outlet['total_big_glass']) ) ;

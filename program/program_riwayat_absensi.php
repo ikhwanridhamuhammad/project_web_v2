@@ -81,6 +81,10 @@
  	$__ra_check_in_p					= array(3000);
  	$__ra_check_out_p					= array(3000);
  	$__ra_check_telat					= array(3000);
+ 	$__ra_check_abnormal			= array(3000);
+ 	$__ra_check_calc_in_1   = "";
+ 	$__ra_check_calc_in_2   = "";
+ 	$__ra_check_calc_in_3   = "";
  	$__ra_kwh								= array(3000);
  	$__ra_picture_in				= array(3000);
  	$__ra_picture_out				= array(3000);
@@ -121,7 +125,11 @@
 		$__ra_check_out_p[$__ra_counter]			= $__ra_data_karyawan['time_out_p'];
  	    $__ra_check_telat[$__ra_counter] = 0;
 		if($__ra_check_in_p[$__ra_counter] > $__ra_check_in[$__ra_counter]){$__ra_check_telat[$__ra_counter] = 1;}
- 	    
+ 	  $__ra_check_calc_in_1 = abs(substr($__ra_check_in[$__ra_counter],0,2))*60 + abs(substr($__ra_check_in[$__ra_counter],3,5));
+ 	  $__ra_check_calc_in_2 = abs(substr($__ra_check_in_p[$__ra_counter],0,2))*60 + abs(substr($__ra_check_in_p[$__ra_counter],3,5));
+ 	  $__ra_check_calc_in_3 = abs($__ra_check_calc_in_1 - $__ra_check_calc_in_2);
+ 	  $__ra_check_abnormal[$__ra_counter] = 0;
+ 	  if($__ra_check_calc_in_3 > 180){$__ra_check_abnormal[$__ra_counter] = 1;}
 		$__ra_counter++;
 	}
 ?>

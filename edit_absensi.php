@@ -42,16 +42,13 @@
                   <div class="row ml-2 mb-2">
                       <h2 class="lead"><b><?php echo $__ea_nama; ?></b></h2>
                   </div>
+
+                  
                   <div class="row mb-2">
                     <div class="col-6">
                       <ul class="ml-4 mt-1 mb-3 fa-ul">
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-home"></i></span>
                           <b>&nbsp;&nbsp;Lokasi Outlet: </b> <?php echo $__ea_outlet; ?>
-                        </li>
-                      </ul>
-                      <ul class="ml-4 mt-1 mb-3 fa-ul">
-                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-clock"></i></span>
-                          <b>&nbsp;&nbsp;Check In: </b> <?php echo $__ea_check_in; ?>
                         </li>
                       </ul>
                     </div>  
@@ -61,6 +58,37 @@
                           <b>&nbsp;&nbsp;Tanggal Masuk: </b> <?php echo $__ea_tanggal; ?>
                         </li>
                       </ul>
+                    </div>  
+                  </div>
+
+                  
+                  <div class="row mb-2">
+
+                    <div class="col-4">
+                      <div class="form-group mb-1">
+                        <label>&nbsp;&nbsp;Shift :</label>
+                        <select class="form-control select" style="width: 100%;" name="ea_shift_input">
+                          <!-- <option selected="selected">ALL</option> -->
+
+                          <?php for($_ea_free_counter = 0;$_ea_free_counter < $__ea_counter_shift;$_ea_free_counter++){ 
+                            if($__ea_shift_id == $__ea_shift_id_group[$_ea_free_counter]){ ?>
+                              <option selected="selected"><?php echo $__ea_shift_group[$_ea_free_counter]; ?></option>
+                            <?php } 
+                            if($__ea_shift_id != $__ea_shift_id_group[$_ea_free_counter]){ ?>
+                            <option><?php echo $__ea_shift_group[$_ea_free_counter]; ?></option>
+                          <?php }} ?>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <ul class="ml-4 mt-1 mb-3 fa-ul">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-clock"></i></span>
+                          <b>&nbsp;&nbsp;Check In: </b> <?php echo $__ea_check_in; ?>
+                        </li>
+                      </ul>
+                    </div>  
+                    <div class="col-4">
                       <ul class="ml-4 mt-1 mb-3 fa-ul">
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-clock"></i></span>
                           <b>&nbsp;&nbsp;Check Out: </b> <?php echo $__ea_check_out; ?>
@@ -68,6 +96,14 @@
                       </ul>
                     </div>  
                   </div>
+
+
+
+
+
+
+
+
                   <div class="row mb-3 mt-2 text-sm">
                     <div class="col-4">
                       <label>Tambal Motor :</label>

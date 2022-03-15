@@ -13,6 +13,7 @@
 	$_SESSION["_po_sn_outlet"] = "";
 	$_SESSION["_po_sn_karyawan"] = "";
 	$_SESSION["_ra_edit_absensi"] = "";
+	$_SESSION["_ra_edit_absensi_menu"] = "";
 	$_SESSION["_ssn_tahun_bulan"] = "";
 	$_SESSION["_ssn_outlet"] = "";
 	$_SESSION["_dsn_tgl"] = "";
