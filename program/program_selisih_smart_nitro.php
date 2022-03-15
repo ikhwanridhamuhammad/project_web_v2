@@ -118,7 +118,13 @@
 	//===================================================
 	$__ssn_tanggal_jam_jadi = "";
 	$__ssn_counter 			= 0;
-	$__ssn_query_absen = "SELECT *,presence.time_in AS check_in_presence,presence.time_out AS check_out_presence,shift.time_in AS check_in,shift.time_out AS check_out FROM presence,employees,building,shift WHERE presence.presence_date BETWEEN '$__tanggal_start' AND '$__tanggal_end' AND presence.shift_id = shift.shift_id AND presence.building_id = building.building_id AND presence.employees_id = employees.id AND presence.user_id = '$_global_user_id' ";
+	if($_ses_ssn_outlet == "ALL"){
+		$__ssn_query_absen = "SELECT *,presence.time_in AS check_in_presence,presence.time_out AS check_out_presence,shift.time_in AS check_in,shift.time_out AS check_out FROM presence,employees,building,shift WHERE presence.presence_date BETWEEN '$__tanggal_start' AND '$__tanggal_end' AND presence.shift_id = shift.shift_id AND presence.building_id = building.building_id AND presence.employees_id = employees.id AND presence.user_id = '$_global_user_id' ";
+	}
+	if($_ses_ssn_outlet != "ALL"){
+		$__ssn_query_absen = "SELECT *,presence.time_in AS check_in_presence,presence.time_out AS check_out_presence,shift.time_in AS check_in,shift.time_out AS check_out FROM presence,employees,building,shift WHERE presence.presence_date BETWEEN '$__tanggal_start' AND '$__tanggal_end' AND presence.shift_id = shift.shift_id AND presence.building_id = building.building_id AND presence.employees_id = employees.id AND presence.user_id = '$_global_user_id' AND building.name = '$_ses_ssn_outlet' ";
+	}
+
 	$__ssn_result_absen = $__konek_absensi->query($__ssn_query_absen); 
 	while ($__ssn_data_absen = mysqli_fetch_array($__ssn_result_absen)){
 	  $__ssn_tanggal[$__ssn_counter] 		= date_create($__ssn_data_absen['presence_date']);
