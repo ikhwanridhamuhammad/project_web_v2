@@ -58,6 +58,7 @@
   if($_global_page_program == 3){include_once './aksi/riwayat_absensi.php';}
   if($_global_page_program == 4){include_once './aksi/pemasukan.php';}
   if($_global_page_program == 10){include_once './aksi/pemasukan_sn.php';}
+  if($_global_page_program == 5){include_once './aksi/selisih_smart_nitro.php';}
   if($_global_page_program == 6){include_once './aksi/data_smart_nitro.php';}
   if($_global_page_program == 7){include_once './aksi/setting_outlet.php';}
   if($_global_page_program == 8){include_once './aksi/setting_shift.php';}

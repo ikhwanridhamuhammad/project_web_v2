@@ -55,7 +55,7 @@
   $__tanggal_bulan    = date_format($__tanggal_jadi_fix,"n");
   $__tanggal_bulan_2  = date_format($__tanggal_jadi_fix,"m");
   $__jumlah_tanggal   = cal_days_in_month(CAL_GREGORIAN,$__tanggal_bulan,$__tanggal_tahun);
-  $__tanggal_start 		= $__tanggal_tahun."-".$__tanggal_bulan_2."-01";
+  $__tanggal_start 		= $__tanggal_tahun."-".$__tanggal_bulan_2."-13";
   $__tanggal_end 			= $__tanggal_tahun."-".$__tanggal_bulan_2."-".$__jumlah_tanggal;
 	//===================================================================
 	//===================================================================

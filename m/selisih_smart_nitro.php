@@ -71,7 +71,7 @@
                       <div class="form-group">
                         <label>&nbsp;&nbsp;</label>
                         <div class="input-group date">
-                          <input type="submit" name="btn_filter_pemasukan_ssn" value="GO" class="btn btn-success btn-round btn-block">
+                          <input type="submit" name="btn_filter_selisih_ssn" value="GO" class="btn btn-success btn-round btn-block">
                         </div>
                       </div>
                     </div>
@@ -114,23 +114,27 @@
                         </b>
                         <br>
                         
-                        <?php echo $__ra_tanggal_3[$__ra_free_counter]; ?>
+                        <?php echo $__ssn_tanggal[$__ra_free_counter]; ?>
                         <i class="fas fa-long-arrow-alt-right"></i>
-                        <?php echo $__ra_nama_shift[$__ra_free_counter]; ?>
-                          <?php if($__ra_check_telat[$__ra_free_counter] == 1){ ?>
-                            <span class="badge badge-danger">Telat</span>
-                          <?php } ?>
+                        <?php echo $__ssn_shift[$__ra_free_counter]; ?>
                         <br>
-                        <?php echo $__ra_check_in_p[$__ra_free_counter]; ?>
-                        
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                        
-                        <?php echo $__ra_check_out_p[$__ra_free_counter]; ?>
+                        <?php echo "Totalisator"; ?>&nbsp;
+                        <i class="fas fa-long-arrow-alt-right"></i>&nbsp;&nbsp;
+                        <?php echo "Rp ".number_format($__ssn_omset_2[$__ra_free_counter],2,',','.'); ?>
+                        <br>
+                        <?php echo "Laporan"; ?>&nbsp;
+                        <i class="fas fa-long-arrow-alt-right"></i>&nbsp;&nbsp;
+                        <?php echo "Rp ".number_format($__ssn_omset[$__ra_free_counter],2,',','.'); ?>
                       </td>
 
-
-
                       <td style="text-align: center">
+                          <?php if($__ssn_omset_detail[$__ra_free_counter] == 1){ ?>
+                            <span class="badge badge-success">OK</span>
+                          <?php } ?>
+                          <?php if($__ssn_omset_detail[$__ra_free_counter] == 0){ ?>
+                            <span class="badge badge-danger">SELISIH</span>
+                          <?php } ?>
+                        <br>
                         <a href="#" data-toggle="modal" data-target="<?php echo "#modal".$__ra_free_counter; ?>">
                         <span class="badge badge-info">View</span></a>
                       </td>
@@ -144,6 +148,123 @@
       </div>
 
 
+<?php for($_free_counter = 0; $_free_counter < $__ssn_counter ; $_free_counter++){ ?>
+      <div class="modal fade" id="<?php echo "modal".$_free_counter; ?>">
+        <div class="modal-dialog">
+
+
+              <div class="card bg-light">
+                <div class="card-header bg-info text-muted text-center border-bottom-0">
+                  <b>Detail Absensi</b>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="row">
+                    <div class="col-8">
+                      <h2 class="lead"><b><?php echo $__ssn_karyawan[$_free_counter]; ?></b></h2>
+                      <ul class="ml-4 mb-0 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-home"></i></span>
+                          <b>&nbsp;&nbsp;Lokasi Outlet: </b> <?php echo $__ssn_outlet[$_free_counter]; ?>
+                        </li>
+                      </ul>
+                      <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar-check"></i></span>
+                          <b>&nbsp;&nbsp;Tanggal: </b> <?php echo $__ssn_tanggal[$_free_counter]; ?>
+                        </li>
+                      </ul>
+                      <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-clock"></i></span>
+                          <b>&nbsp;&nbsp;SHIFT : </b> <?php echo $__ssn_shift[$_free_counter]; ?>&nbsp;&nbsp;
+                                        <?php if($__ssn_check_telat[$_free_counter] == 1){ ?>
+                                            <span class="badge badge-danger">Telat</span>
+                                        <?php } ?><br/>
+                          <b>&nbsp;&nbsp;Shift IN: </b> <?php echo $__ssn_time_in_presence[$_free_counter]; ?><br/>
+                          <b>&nbsp;&nbsp;Shift Out : </b> <?php echo $__ssn_time_out_presence[$_free_counter]; ?><br/>
+                        </li>
+                      </ul>
+                      <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-dollar-sign"></i></span>
+                          <b>&nbsp;&nbsp;Report OMSET : </b><?php echo "Rp ".number_format($__ssn_omset[$_free_counter],2,',','.'); ?>
+                        </li>
+                      </ul>
+                      <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-dollar-sign"></i></span>
+                          <b>&nbsp;&nbsp;Smart Nitro OMSET : </b><?php echo "Rp ".number_format($__ssn_omset_2[$_free_counter],2,',','.'); ?>
+                        </li>
+                      </ul>
+                      <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-dollar-sign"></i></span>
+                          <b>&nbsp;&nbsp;Selisih OMSET : </b>
+                                        <?php if($__ssn_omset_detail[$_free_counter] == 0){ ?>
+                                            <span class="badge badge-danger">
+                                                <?php echo "Rp ".number_format($__ssn_omset_detail_2[$_free_counter],2,',','.'); ?>
+                                            </span>
+                                        <?php } ?>
+                                        <?php if($__ssn_omset_detail[$_free_counter] == 1){ ?>
+                                            <span class="badge badge-success">
+                                                <?php echo "Rp ".number_format($__ssn_omset_detail_2[$_free_counter],2,',','.'); ?>
+                                            </span>
+                                        <?php } ?>
+                                        
+                        </li>
+                      </ul>
+                      <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-bolt"></i></span>
+                          <b>&nbsp;&nbsp;KWH Akhir : </b><?php echo $__ssn_kwh[$_free_counter]; ?>
+                        </li>
+                      </ul>
+                      <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-motorcycle"></i></span>
+                          <b>&nbsp;&nbsp;Tambal Ban : </b> <?php echo $__ssn_tambal_motor[$_free_counter]." Ban"; ?><br/>
+                          <b>&nbsp;&nbsp;Promo : </b> <?php echo $__ssn_promo_motor[$_free_counter]." Ban"; ?><br/>
+                          <b>&nbsp;&nbsp;Error : </b> <?php echo $__ssn_error_2_motor[$_free_counter]." Ban"; ?><br/>
+                        </li>
+                      </ul> 
+                      <ul class="ml-4 mt-2 mb-2 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-car"></i></span>
+                          <b>&nbsp;&nbsp;Tambal Ban : </b> <?php echo $__ssn_tambal_mobil[$_free_counter]." Ban"; ?><br/>
+                          <b>&nbsp;&nbsp;Promo : </b> <?php echo $__ssn_promo_mobil[$_free_counter]." Ban"; ?><br/>
+                          <b>&nbsp;&nbsp;Error : </b> <?php echo $__ssn_error_2_mobil[$_free_counter]." Ban"; ?><br/>
+                        </li>
+                      </ul>
+                      <ul class="ml-4 mb-0 fa-ul text-muted">
+                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope-open-text"></i></span>
+                          <b>&nbsp;&nbsp;Keterangan : </b><?php echo $__ssn_keterangan[$_free_counter]; ?>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-4">
+                      <div class="row">
+                        <label><small><b>Check In :</b></small></label>
+                      </div>
+                      <div class="row text-center">
+                        <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
+                        <img src="<?php echo $__ssn_picture_in[$_free_counter]; ?>" class="product-image" alt="Product Image"> 
+                      </div>
+                      <div class="row">
+                        <label><small><b>Check Out :</b></small></label>
+                      </div>
+                      <div class="row text-center">
+                        <!--<img src="../dist/img/pict_2.jpeg" class="product-image" alt="Product Image"> -->
+                        <?php if($__ssn_time_out_presence[$_free_counter] != "00:00:00"){ ?>
+                            <img src="<?php echo $__ssn_picture_out[$_free_counter]; ?>" class="product-image" alt="Product Image"> 
+                        <?php } ?>
+                      </div>
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-footer text-right">
+                      <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+<?php } ?>
     </section>
   </div>
 

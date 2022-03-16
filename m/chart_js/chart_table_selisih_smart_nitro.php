@@ -1,6 +1,15 @@
 <script>
   $(function () {
     $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,  
+      "lengthChange": false,
+      "searching": false,
+      "pageLength": 10,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+    });
     $("#table_ssn").DataTable({
       "lengthChange": true,
       "searching": true,
