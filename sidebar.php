@@ -69,8 +69,8 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview <?php if($_global_page_program >= 5 && $_global_page_program <=6){echo "menu-open";} ?>">
-            <a href="#" class="nav-link <?php if($_global_page_program >= 5 && $_global_page_program <=6){echo "active";} ?>">
+          <li class="nav-item has-treeview <?php if(($_global_page_program >= 5 && $_global_page_program <=6) || $_global_page_program == 11){echo "menu-open";} ?>">
+            <a href="#" class="nav-link <?php if(($_global_page_program >= 5 && $_global_page_program <=6)||$_global_page_program == 11){echo "active";} ?>">
               <i class="nav-icon fas fa-random"></i>
               <p>
                 Smart Nitro
@@ -88,6 +88,12 @@
                 <a href="./data_smart_nitro.php" class="nav-link <?php if($_global_page_program == 6){echo "active";} ?>"> 
                   <i class="far fa-arrow-alt-circle-right nav-icon"></i>
                   <p>Data Smart Nitro</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./shift_smart_nitro.php" class="nav-link <?php if($_global_page_program == 11){echo "active";} ?>"> 
+                  <i class="far fa-arrow-alt-circle-right nav-icon"></i>
+                  <p>Data SHIFT</p>
                 </a>
               </li>
             </ul>

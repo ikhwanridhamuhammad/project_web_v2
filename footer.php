@@ -44,6 +44,7 @@
   if($_global_page_program == 1){include_once './chart_js/chart_table_dash.php';}
   if($_global_page_program == 2){include_once './chart_js/chart_table_dash_detail.php';}
   if($_global_page_program == 3){include_once './chart_js/chart_table_riwayat_absensi.php';}
+  if($_global_page_program == 11){include_once './chart_js/chart_table_shift_smart_nitro.php';}
   if($_global_page_program == 4){include_once './chart_js/chart_table_pemasukan.php';}
   if($_global_page_program == 10){include_once './chart_js/chart_table_pemasukan.php';}
   if($_global_page_program == 5){include_once './chart_js/chart_table_selisih_smart_nitro.php';}
