@@ -29,11 +29,13 @@
 	if(empty($_ses_shift_sn_outlet))				{$_ses_shift_sn_outlet = "ALL";}
 	//================================================================================
 	$___bulan = array("kosong","Januari", "Februari", "Maret" , "April", "Mei", "Juni" , "Juli", "Agustus", "September" , "Oktober", "November", "Desember");
+	$___hari = array("kosong","Senin", "Selasa", "Rabu" , "Kamis", "Jumat", "Sabtu" , "Minggu");
  	$__shift_sn_value_date = date_format(date_create($_ses_shift_sn_tanggal),"d F Y");
  	$__shift_sn_value_date_bulan = date_format(date_create($_ses_shift_sn_tanggal),"n");
+ 	$__shift_sn_value_date_hari = date_format(date_create($_ses_shift_sn_tanggal),"N");
  	$__shift_sn_value_date_tanggal = date_format(date_create($_ses_shift_sn_tanggal),"j");
  	$__shift_sn_value_date_tahun = date_format(date_create($_ses_shift_sn_tanggal),"Y");
- 	$__shift_sn_value_date_4 = $__shift_sn_value_date_tanggal." ".$___bulan[$__shift_sn_value_date_bulan]." ".$__shift_sn_value_date_tahun;
+ 	$__shift_sn_value_date_4 = $___hari[$__shift_sn_value_date_hari].", ".$__shift_sn_value_date_tanggal." ".$___bulan[$__shift_sn_value_date_bulan]." ".$__shift_sn_value_date_tahun;
 
  	$__shift_sn_tanggal_2	 = date_format(date_create($_ses_shift_sn_tanggal),"Y-m-d");
 	//===================================================================

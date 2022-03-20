@@ -42,6 +42,7 @@
   if($_global_page_program == 3){include_once './chart_js/chart_table_riwayat_absensi.php';}
   if($_global_page_program == 4){include_once './chart_js/chart_table_pemasukan.php';}
   if($_global_page_program == 10){include_once './chart_js/chart_table_pemasukan.php';}
+  if($_global_page_program == 11){include_once './chart_js/chart_table_shift_smart_nitro.php';}
   if($_global_page_program == 5){include_once './chart_js/chart_table_selisih_smart_nitro.php';}
   if($_global_page_program == 6){include_once './chart_js/chart_table_data_smart_nitro.php';}
   if($_global_page_program == 7){include_once './chart_js/chart_table_setting_outlet.php';}
@@ -58,6 +59,7 @@
   if($_global_page_program == 3){include_once './aksi/riwayat_absensi.php';}
   if($_global_page_program == 4){include_once './aksi/pemasukan.php';}
   if($_global_page_program == 10){include_once './aksi/pemasukan_sn.php';}
+  if($_global_page_program == 11){include_once './aksi/shift_smart_nitro.php';}
   if($_global_page_program == 5){include_once './aksi/selisih_smart_nitro.php';}
   if($_global_page_program == 6){include_once './aksi/data_smart_nitro.php';}
   if($_global_page_program == 7){include_once './aksi/setting_outlet.php';}

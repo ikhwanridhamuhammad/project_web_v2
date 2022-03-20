@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../dist/img/logoM.png">
   <!-- Font Awesome -->       
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->           
@@ -89,6 +90,7 @@ scrollMSG();
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
               <li><a href="./selisih_smart_nitro.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Selisih Smart Nitro</a></li>
               <li><a href="./hiperlink/hip_dsn_m.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Data Smart Nitro</a></li>
+              <li><a href="./shift_smart_nitro.php" class="dropdown-item"><i class="fa fa-arrow-alt-circle-right"></i> Data Real Shift</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

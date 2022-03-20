@@ -3,10 +3,10 @@
   $(function () {
     $("#example1").DataTable();
     $('#table_shsn').DataTable({
-      "lengthChange": true,
-      "searching": true,
+      "lengthChange": false,
+      "searching": false,
       "pageLength": <?php echo $_shift_sn_counter_outlet-1; ?>,
-      "ordering": true,
+      "ordering": false,
       "info": true,
       "autoWidth": false,
     });

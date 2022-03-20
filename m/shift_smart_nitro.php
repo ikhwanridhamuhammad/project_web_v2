@@ -1,16 +1,13 @@
-
-
   <?php
     error_reporting(0);
     session_start();
-    if($_SESSION['admin']){
+    include_once './program/global_var_run.php';
+      if($_SESSION['admin_top'] || $__global_run == 1){
   ?>
 
-  
   <?php 
   include_once './program/program_shift_smart_nitro.php';
-  include_once './navbar.php';
-  include_once './sidebar.php';
+  include_once './m_navbar.php';
   //===============================================================================================
   
   //===============================================================================================
@@ -21,9 +18,10 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-12">
-            <h1 class="m-0 text-dark"><i class="nav-icon fas fa-calendar-alt"></i>&nbsp;Data Real Shift Smart Nitro</h1>
-          </div><!-- /.col -->
+          <div class="col-6">
+            <h5 class="m-0 text-dark"><i class="nav-icon fas fa-calendar-alt"></i>&nbsp;Riwayat Absensi</h5>
+
+          </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -80,46 +78,38 @@
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-body">
 
+            <div class="card">
+                <table  id="table_shsn" class="table table-striped table-valign-middle">
+                  <thead>
+                  <tr>
+                    <th style="text-align: center ; width:10%">No</th>
+                    <th style="text-align: center">Detail Shift</th>
+                    <th style="text-align: center ; width:25%">Omset</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <?php for($__ra_free_counter = 0;$__ra_free_counter < $__ssn_counter; $__ra_free_counter++){ ?>
+                    <tr>
+                      <td style="text-align: center"><?php echo $__ra_free_counter+1; ?></td>
 
-                  <div class="row">
-                    <div class="col-12">
-                      <table  id="table_shsn" class="table table-striped table-valign-middle">
-                        <thead>
-                          <tr>
-                            <th style="text-align: center">No</th>
-                            <th style="text-align: center">Outlet</th>
-                            <th style="text-align: center">Tanggal</th>
-                            <th style="text-align: center">Shift</th>
-                            <th style="text-align: center">Omset Shift</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                                <?php 
-                                  for($_free_counter = 0; $_free_counter < $__ssn_counter ; $_free_counter++){ ?>
-                                    <tr>
-                                      <td style="text-align: center"><?php echo $_free_counter+1; ?></td>
-                                      <td><?php echo $__ssn_outlet[$_free_counter]; ?></td>
-                                      <td><?php echo $__shift_sn_value_date_4; ?></td>
-                                      <td style="text-align: center">
-                                        <?php echo $__ssn_shift[$_free_counter]; ?>&nbsp;&nbsp;
-                                        <?php echo "(".$__ssn_time_in_shift_2[$_free_counter]."-".$__ssn_time_out_shift_2[$_free_counter].")"; ?>  
-                                      </td>
-                                      <td style="text-align: center"><?php echo "Rp ".number_format($__ssn_omset[$_free_counter],2,',','.'); ?></td>
-
-                                      
-                                    </tr>
-                                      <?php
-                                  }
-                                ?>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                      <td>
+                        <b>
+                        <?php echo $__ssn_outlet[$__ra_free_counter]; ?>
+                        <br></b>
+                        <?php echo $__shift_sn_value_date_4; ?>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                        <?php echo $__ssn_shift[$__ra_free_counter]; ?>
+                        <br>
+                        <?php echo "(".$__ssn_time_in_shift_2[$__ra_free_counter]."-".$__ssn_time_out_shift_2[$__ra_free_counter].")"; ?>  
+                        
+                      </td>
+                      <td style="text-align: center"><?php echo "Rp ".number_format($__ssn_omset[$__ra_free_counter],2,',','.'); ?></td>
+                    </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+            </div>
             </div>
           </div>
         </form>
@@ -143,14 +133,11 @@
 
 
 
-
-
   
 
   <?php
-  include_once './footer.php';
+  include_once './m_footer.php';
   ?>
-
 
 
 
@@ -160,4 +147,3 @@
           header("location:./login.php");
       }
   ?>
-

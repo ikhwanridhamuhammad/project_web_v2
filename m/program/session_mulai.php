@@ -6,6 +6,10 @@
 	$_SESSION["_ra_tgl_end"] = "";
 	$_SESSION["_ra_outlet"] = "";
 	$_SESSION["_ra_karyawan"] = "";
+	//==============================================
+	$_SESSION["_shift_sn_tgl"] = "";
+	$_SESSION["_shift_sn_outlet"] = "";
+	//==============================================
 	$_SESSION["_po_tahun_bulan"] = "";
 	$_SESSION["_po_outlet"] = "";
 	$_SESSION["_po_karyawan"] = "";

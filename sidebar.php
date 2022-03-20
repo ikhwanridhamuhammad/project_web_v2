@@ -93,7 +93,7 @@
               <li class="nav-item">
                 <a href="./shift_smart_nitro.php" class="nav-link <?php if($_global_page_program == 11){echo "active";} ?>"> 
                   <i class="far fa-arrow-alt-circle-right nav-icon"></i>
-                  <p>Data SHIFT</p>
+                  <p>Data Real SHIFT</p>
                 </a>
               </li>
             </ul>
