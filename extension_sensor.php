@@ -84,6 +84,68 @@
                   </div>
                 </div>
               </div>
+
+              <div class="card">
+                <div class="card-body">
+
+
+                  <div class="row">
+                    <div class="col-12">
+                      <table  id="table_shsn_2" class="table table-striped table-valign-middle">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center">No</th>
+                            <th style="text-align: center">Jam Start</th>
+                            <th style="text-align: center">Jam End</th>
+                            <th style="text-align: center">Kondisi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                                <?php if($_es_konter != 0){ ?>
+                                <?php 
+                                  for($_free_counter = 0; $_free_counter <= $_es_konter ; $_free_counter++){ ?>
+                                    <tr>
+                                      <td style="text-align: center"><?php echo $_free_counter+1; ?></td>
+                                      <td><?php echo $_es_start_kondisi[$_free_counter]; ?></td>
+                                      <td><?php echo $_es_end_kondisi[$_free_counter]; ?></td>
+                                      <td>
+
+                                        <?php if($_es_kondisi[$_free_counter] == 1){ ?>
+                                            <span class="badge badge-warning">TUTUP</span>
+                                        <?php } ?>
+                                        <?php if($_es_kondisi[$_free_counter] == 2){ ?>
+                                            <span class="badge badge-success">BUKA</span>
+                                        <?php } ?>
+                                        <?php if($_es_kondisi[$_free_counter] == 0){ ?>
+                                            <span class="badge badge-danger">RUSAK</span>
+                                        <?php } ?>
+                                        <b>
+                                        <?php if($_es_selisih[$_free_counter] < 60) {
+                                          echo $_es_selisih[$_free_counter] % 60;
+                                          echo " Menit";
+                                        } ?> 
+                                        <?php if($_es_selisih[$_free_counter] >= 60) {
+                                          echo floor($_es_selisih[$_free_counter] / 60);
+                                          echo " Jam ";
+                                          echo $_es_selisih[$_free_counter] % 60;
+                                          echo " Menit";
+                                        } ?>  
+                                        
+                                        </b>
+                                      </td>
+                                      
+                                    </tr>
+                                      <?php
+                                  }
+                                ?>
+                                <?php } ?>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 
               <div class="card">
                 <div class="card-body">
 
@@ -127,6 +189,7 @@
                   </div>
                 </div>
               </div>
+               -->
             </div>
           </div>
         </form>

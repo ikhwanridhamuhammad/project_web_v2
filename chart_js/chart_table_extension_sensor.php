@@ -9,6 +9,13 @@
       "ordering": true,
       "info": true,
       "autoWidth": false,
+    });$('#table_shsn_2').DataTable({
+      "lengthChange": false,
+      "searching": false,
+      "pageLength": 10,
+      "ordering": true,
+      "info": false,
+      "autoWidth": false,
     });
   });
 </script>

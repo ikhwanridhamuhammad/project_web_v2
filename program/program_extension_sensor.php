@@ -63,12 +63,51 @@
 		$__ex_sen_result_data_sn  	= $__konek_base_new->query($__ex_sen_query_data_sn); 
 	  //=========================================================================
 	  //=========================================================================
+	  $_es_lock_1 = 0;
+	  $_es_start_kondisi = array(1000);
+	  $_es_end_kondisi   = array(1000);
+	  $_es_start_kondisi_2 = array(1000);
+	  $_es_end_kondisi_2   = array(1000);
+	  $_es_selisih   			= array(1000);
+	  $_es_kondisi 				= array(1000);
+	  $_es_konter     		= 0;
+	  //=========================================================================
+	  //=========================================================================
 	  while ($data = mysqli_fetch_array($__ex_sen_result_data_sn)){
       $_h___sen_door[$_h___counter] =  $data['sen_door'];
       $_h___date[$_h___counter] = substr($data['date'],11,5);
       //====================================================================
+      //====================================================================
+      if($_es_lock_1 == 0){
+      	$_es_lock_1 = 1;
+      	$_es_start_kondisi[$_es_konter] = $_h___date[$_h___counter];
+      	$_es_kondisi[$_es_konter] 			= $_h___sen_door[$_h___counter];
+      }
+      if($_es_lock_1 == 1){
+      	if($_h___sen_door[$_h___counter] != $_es_kondisi[$_es_konter]){
+      		$_es_end_kondisi[$_es_konter] = $_h___date[$_h___counter-1];
+      		$_es_start_kondisi_2[$_es_konter] = abs(substr($_es_start_kondisi[$_es_konter],0,2))*60 + abs(substr($_es_start_kondisi[$_es_konter],3,5));
+      		$_es_end_kondisi_2[$_es_konter] 	 = abs(substr($_es_end_kondisi[$_es_konter],0,2))*60 + abs(substr($_es_end_kondisi[$_es_konter],3,5));
+    			$_es_selisih[$_es_konter] 	= abs($_es_end_kondisi_2[$_es_konter] - $_es_start_kondisi_2[$_es_konter]);
+      		$_es_konter++;
+      		$_es_lock_1 = 2;
+      	}
+      }
+      if($_es_lock_1 == 2){
+      	$_es_lock_1 = 1;
+      	$_es_start_kondisi[$_es_konter] = $_h___date[$_h___counter];
+      	$_es_kondisi[$_es_konter] 			= $_h___sen_door[$_h___counter];
+      }
+      //====================================================================
+      //====================================================================
       $_h___counter++;
 	  }
+	  //=========================================================================
+	  //=========================================================================
+	  $_es_end_kondisi[$_es_konter] = $_h___date[$_h___counter-1];
+	  $_es_start_kondisi_2[$_es_konter] = abs(substr($_es_start_kondisi[$_es_konter],0,2))*60 + abs(substr($_es_start_kondisi[$_es_konter],3,5));
+	  $_es_end_kondisi_2[$_es_konter] 	 = abs(substr($_es_end_kondisi[$_es_konter],0,2))*60 + abs(substr($_es_end_kondisi[$_es_konter],3,5));
+	  $_es_selisih[$_es_konter] 	= abs($_es_end_kondisi_2[$_es_konter] - $_es_start_kondisi_2[$_es_konter]);
 	  //=========================================================================
 	  //=========================================================================
 	  $__ex_sen_counter++;
