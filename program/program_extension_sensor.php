@@ -105,9 +105,15 @@
 	  //=========================================================================
 	  //=========================================================================
 	  $_es_end_kondisi[$_es_konter] = $_h___date[$_h___counter-1];
+<<<<<<< HEAD
     $_es_start_kondisi_2[$_es_konter] = abs(substr($_es_start_kondisi[$_es_konter],0,2))*60 + abs(substr($_es_start_kondisi[$_es_konter],3,5));
     $_es_end_kondisi_2[$_es_konter] 	 = abs(substr($_es_end_kondisi[$_es_konter],0,2))*60 + abs(substr($_es_end_kondisi[$_es_konter],3,5));
     $_es_selisih[$_es_konter] 	= abs($_es_end_kondisi_2[$_es_konter] - $_es_start_kondisi_2[$_es_konter]);
+=======
+	  $_es_start_kondisi_2[$_es_konter] = abs(substr($_es_start_kondisi[$_es_konter],0,2))*60 + abs(substr($_es_start_kondisi[$_es_konter],3,5));
+	  $_es_end_kondisi_2[$_es_konter] 	 = abs(substr($_es_end_kondisi[$_es_konter],0,2))*60 + abs(substr($_es_end_kondisi[$_es_konter],3,5));
+	  $_es_selisih[$_es_konter] 	= abs($_es_end_kondisi_2[$_es_konter] - $_es_start_kondisi_2[$_es_konter]);
+>>>>>>> 2b396654e436ec1f018e9e9c62f951f006862162
 	  //=========================================================================
 	  //=========================================================================
 	  $__ex_sen_counter++;

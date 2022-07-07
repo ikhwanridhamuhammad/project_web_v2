@@ -101,7 +101,11 @@
                           </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD
                                 <?php if($_h___counter != 0){ ?>
+=======
+                                <?php if($_es_konter != 0){ ?>
+>>>>>>> 2b396654e436ec1f018e9e9c62f951f006862162
                                 <?php 
                                   for($_free_counter = 0; $_free_counter <= $_es_konter ; $_free_counter++){ ?>
                                     <tr>
