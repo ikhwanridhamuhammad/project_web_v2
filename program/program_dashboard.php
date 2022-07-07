@@ -18,15 +18,15 @@
 	//====================================================================================
 	//==================DATABASE BUILDING ABSENSI=========================================
 	//====================================================================================
-	$___dash_building_id 				= array(100);
-	$___dash_code_id 						= array(100);
-	$___dash_nama 							= array(100);
-	$___dash_hrg_tambah_motor 	= array(100);
-	$___dash_hrg_tambah_mobil 	= array(100);
-	$___dash_hrg_isi_baru_motor = array(100);
-	$___dash_hrg_isi_baru_mobil = array(100);
-	$___dash_hrg_tambal_motor 	= array(100);
-	$___dash_hrg_tambal_mobil 	= array(100);
+	$___dash_building_id 				= array(1000);
+	$___dash_code_id 						= array(1000);
+	$___dash_nama 							= array(1000);
+	$___dash_hrg_tambah_motor 	= array(1000);
+	$___dash_hrg_tambah_mobil 	= array(1000);
+	$___dash_hrg_isi_baru_motor = array(1000);
+	$___dash_hrg_isi_baru_mobil = array(1000);
+	$___dash_hrg_tambal_motor 	= array(1000);
+	$___dash_hrg_tambal_mobil 	= array(1000);
 	$___dash_grafik_nama				= "";
 	$___dash_counter_data				= 0;
 	$___dash_db_data_today = mysqli_query($__konek_absensi,"select * from building order by building_id");
@@ -54,15 +54,15 @@
 	//====================================================================================
 	//==================DATABASE MIROVTEC NITRO REAL UPDATE===============================
 	//====================================================================================
-	$____dash_device_id 					= array(100);
-	$____dash_ban_tambah_motor 		= array(100);
-	$____dash_ban_tambah_mobil 		= array(100);
-	$____dash_ban_isi_baru_motor 	= array(100);
-	$____dash_ban_isi_baru_mobil 	= array(100);
-	$____dash_waktu 							= array(100);
-	$____total_omset_outlet				= array(100);
-	$____total_ban_outlet					= array(100);
-	$____status_outlet						= array(100);
+	$____dash_device_id 					= array(1000);
+	$____dash_ban_tambah_motor 		= array(1000);
+	$____dash_ban_tambah_mobil 		= array(1000);
+	$____dash_ban_isi_baru_motor 	= array(1000);
+	$____dash_ban_isi_baru_mobil 	= array(1000);
+	$____dash_waktu 							= array(1000);
+	$____total_omset_outlet				= array(1000);
+	$____total_ban_outlet					= array(1000);
+	$____status_outlet						= array(1000);
 	$____total_max_omset					= 0;
 	$____dash_grafik_omset				= "";
 	$____dash_counter_data				= 0;
@@ -95,7 +95,10 @@
 	//====================================================================================
 	$_____dash_counter_data 	 = 0;
 	$_____dash_db_data_absensi = mysqli_query($__konek_absensi,"select * from presence where presence_date = '$global_date' order by presence_id");
-	while ($_____dash_data = mysqli_fetch_array($_____dash_db_data_absensi)){$_____dash_counter_data++;}
+	while ($_____dash_data = mysqli_fetch_array($_____dash_db_data_absensi)){
+	    if($_____dash_data['user_id'] == $_global_user_id){$_____dash_counter_data++;}
+	    
+	}
 
 
 

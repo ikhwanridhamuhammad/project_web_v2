@@ -96,6 +96,14 @@
                   <p>Data Real SHIFT</p>
                 </a>
               </li>
+              <?php if($_global_user_id == 10 || $_global_user_id == 10){ ?>
+              <li class="nav-item">
+                <a href="./extension_sensor.php" class="nav-link <?php if($_global_page_program == 12){echo "active";} ?>"> 
+                  <i class="far fa-arrow-alt-circle-right nav-icon"></i>
+                  <p>Extension Sensor</p>
+                </a>
+              </li>
+              <?php  } ?>
             </ul>
           </li>
 

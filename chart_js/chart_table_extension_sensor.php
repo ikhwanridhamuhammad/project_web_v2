@@ -1,28 +1,47 @@
 
-
-
 <script>
-
   $(function () {
-    $("#tabel_dash_1").DataTable({
-      "paging": true,
+    $("#example1").DataTable();
+    $('#table_shsn').DataTable({
+      "lengthChange": true,
+      "searching": true,
+      "pageLength": 7,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+    });$('#table_shsn_2').DataTable({
       "lengthChange": false,
-      <?php if(($____dash_counter_data - $____dash_counter_status) > 20) {?>
-        "pageLength": 10,
-      <?php } ?>
-      <?php if(($____dash_counter_data - $____dash_counter_status) <=20) {?>
-        "pageLength": <?php echo ($____dash_counter_data - $____dash_counter_status)+3 ; ?>,
-      <?php } ?>
       "searching": false,
+      "pageLength": 10,
       "ordering": true,
       "info": false,
       "autoWidth": false,
     });
-  })
-
-
+  });
 </script>
 
+<script>
+  $(function () {
+    $('#date_1').daterangepicker({
+      singleDatePicker: true,
+      // maxDate: "29 NOVEMBER 2021",
+      maxDate: "<?php echo $tanggal_limit_max; ?>",
+      locale: {
+        format: "D MMM YYYY",
+      }
+      
+    })
+
+    $('#date_2').daterangepicker({
+      singleDatePicker: true,
+      maxDate: "<?php echo $tanggal_limit_max; ?>",
+      locale: {
+        format: "D MMM YYYY",
+      }
+      
+    })
+  });
+</script>
 
 <script>
   $(function () {

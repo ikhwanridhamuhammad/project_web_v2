@@ -2,10 +2,25 @@
 	//=================================================
 	$_global_page_program = 1; // 1 dashboard
   include_once './program/global_var.php';
+//   include_once './program/semua.php';
 	include_once './program/database.php';
   include_once './program/date_time.php';
 	$total_menit = $global_total_menit;
 
+	//====================================================================================
+	//==================DATABASE GROUP====================================================
+	//====================================================================================
+	$_user_enable_id			= array(400);
+	$_user_enable_nama			= array(400);
+	$_user_enable_counter 	= 1;
+	$_user_enable_nama[0]				= "ALL";
+	$_user_enable_query   	= "SELECT * FROM user WHERE user.enable_teknisi = '1' ";
+	$_user_enable_result  	= $__konek_absensi->query($_user_enable_query); 
+	while ($_user_enable_data = mysqli_fetch_array($_user_enable_result)){
+		$_user_enable_id[$_user_enable_counter]	= $_user_enable_data['user_id'];
+		$_user_enable_nama[$_user_enable_counter]	= $_user_enable_data['username'];
+		$_user_enable_counter++;
+	}
 	//====================================================================================
 	//==================DATABASE NITRO TEKNISI PARAMETER==================================
 	//====================================================================================
@@ -44,7 +59,8 @@
 	$____total_ban_mobil					= array(300);
 	$____status_outlet						= array(300);
 	$____tanggal_isi_paket				= array(300);
-	$____owner_outlet							= array("ap","ap","ap","nuril","farhan","farhan","dedy","miski","ruly","suli","bella",);
+	$____nomor_hp				= array(300);
+	$____owner_outlet							= array("ap","ap","ap","nuril","farhan","farhan","dedy","miski","ruly","suli","bella","ap","cholili","salam","cholili2","cholili3","toyok","okta","sutrisno","ap","hendra","supri","albert","iqbal","ikhwan","ikhwan");
 	$____status_off 							= 0;
 	$____dash_counter_data				= 0;
 	$____dash_counter_status			= 0;
@@ -68,6 +84,7 @@
     for($ret = 0;$ret < $__dash_counter; $ret++){
     	if($____dash_device_id[$____dash_counter_data] == $__dash_device_id[$ret]){
     		$____tanggal_isi_paket[$____dash_counter_data] = $__dash_tgl_isi[$ret];
+    		$____nomor_hp[$____dash_counter_data] = $__dash_no_hp[$ret];
     	}
     }
 		$____dash_counter_data++;

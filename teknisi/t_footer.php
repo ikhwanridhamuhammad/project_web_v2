@@ -39,6 +39,7 @@
 <?php
   if($_global_page_program == 1){include_once './chart_js/chart_table_dash.php';}
   if($_global_page_program == 2){include_once './chart_js/chart_table_data_smart_nitro.php';}
+  if($_global_page_program == 5){include_once './chart_js/chart_table_extension_sensor.php';}
   if($_global_page_program == 3){include_once './chart_js/chart_table_paket_data.php';}
   if($_global_page_program == 4){include_once './chart_js/chart_table_top_up.php';}
   
@@ -63,6 +64,7 @@
 <?php 
   if($_global_page_program == 2){include_once './aksi/data_smart_nitro.php';}
   if($_global_page_program == 3){include_once './aksi/data_paket_data.php';}
+  if($_global_page_program == 5){include_once './aksi/extension_sensor.php';}
 
 
   // if($_global_page_program == 3){include_once './aksi/riwayat_absensi.php';}

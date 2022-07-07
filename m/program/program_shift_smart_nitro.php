@@ -169,6 +169,34 @@
 	  $__ssn_counter++;
 
 	}
+	
+	
+
+	if($_global_user_id == 20){
+	  $__ssn_outlet[16] 	  						= $__ssn_outlet[0] ;$__ssn_shift[16] = "SIANG" ;$__ssn_time_in_shift_2[16] = "14:00";$__ssn_time_out_shift_2[16] = "22:00";
+	  $__ssn_outlet[17] 	  						= $__ssn_outlet[1] ;$__ssn_shift[17] = "SIANG" ;$__ssn_time_in_shift_2[17] = "14:00";$__ssn_time_out_shift_2[17] = "22:00";
+	  $__ssn_outlet[18] 	  						= $__ssn_outlet[2] ;$__ssn_shift[18] = "SIANG" ;$__ssn_time_in_shift_2[18] = "14:00";$__ssn_time_out_shift_2[18] = "22:00";
+	  $__ssn_outlet[19] 	  						= $__ssn_outlet[3] ;$__ssn_shift[19] = "SIANG" ;$__ssn_time_in_shift_2[19] = "14:00";$__ssn_time_out_shift_2[19] = "22:00";
+
+	  $__ssn_outlet[20] 	  						= $__ssn_outlet[4] ;$__ssn_shift[20] = "SIANG" ;$__ssn_time_in_shift_2[20] = "14:00";$__ssn_time_out_shift_2[20] = "22:00";
+	  $__ssn_outlet[21] 	  						= $__ssn_outlet[5] ;$__ssn_shift[21] = "SIANG" ;$__ssn_time_in_shift_2[21] = "14:00";$__ssn_time_out_shift_2[21] = "22:00";
+	  $__ssn_outlet[22] 	  						= $__ssn_outlet[6] ;$__ssn_shift[22] = "SIANG" ;$__ssn_time_in_shift_2[22] = "14:00";$__ssn_time_out_shift_2[22] = "22:00";
+	  $__ssn_outlet[23] 	  						= $__ssn_outlet[7] ;$__ssn_shift[23] = "SIANG" ;$__ssn_time_in_shift_2[23] = "14:00";$__ssn_time_out_shift_2[23] = "22:00";
+
+	  $__ssn_omset[16] = $__ssn_omset[8] - $__ssn_omset[0] ;
+	  $__ssn_omset[17] = $__ssn_omset[9] - $__ssn_omset[1] ;
+	  $__ssn_omset[18] = $__ssn_omset[10] - $__ssn_omset[2] ;
+	  $__ssn_omset[19] = $__ssn_omset[11] - $__ssn_omset[3] ;
+
+	  $__ssn_omset[20] = $__ssn_omset[12] - $__ssn_omset[4] ;
+	  $__ssn_omset[21] = $__ssn_omset[13] - $__ssn_omset[5] ;
+	  $__ssn_omset[22] = $__ssn_omset[14] - $__ssn_omset[6] ;
+	  $__ssn_omset[23] = $__ssn_omset[15] - $__ssn_omset[7] ;
+	  $__ssn_counter = 24;
+
+
+
+	}
 
 
 ?>

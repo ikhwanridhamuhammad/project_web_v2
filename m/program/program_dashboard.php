@@ -68,19 +68,24 @@
 	$____dash_db_data_nitro = mysqli_query($__konek_nitro,"select * from $__db_nama_data order by no");
 	while ($____dash_data = mysqli_fetch_array($____dash_db_data_nitro)){
 		$____dash_device_id[$____dash_counter_data] 					= $____dash_data['device_id'];
-		$____dash_ban_tambah_motor[$____dash_counter_data] 		= $____dash_data['ban_tambah_motor'];
-		$____dash_ban_tambah_mobil[$____dash_counter_data] 		= $____dash_data['ban_tambah_mobil'];
-		$____dash_ban_isi_baru_motor[$____dash_counter_data] 	= $____dash_data['ban_isi_baru_motor'];
-		$____dash_ban_isi_baru_mobil[$____dash_counter_data] 	= $____dash_data['ban_isi_baru_mobil'];
-		$____total_omset_outlet[$____dash_counter_data] 			= $____dash_data['ban_tambah_motor'] * $___dash_hrg_tambah_motor[$____dash_counter_data] + $____dash_data['ban_tambah_mobil'] * $___dash_hrg_tambah_mobil[$____dash_counter_data] + $____dash_data['ban_isi_baru_motor'] * $___dash_hrg_isi_baru_motor[$____dash_counter_data] + $____dash_data['ban_isi_baru_mobil'] * $___dash_hrg_isi_baru_mobil[$____dash_counter_data] ;
-		if($____total_omset_outlet[$____dash_counter_data] > $____total_max_omset){$____total_max_omset = $____total_omset_outlet[$____dash_counter_data];}
-		$____total_ban_outlet[$____dash_counter_data] 				= $____dash_data['ban_tambah_motor'] + $____dash_data['ban_tambah_mobil'] + $____dash_data['ban_isi_baru_motor'] + $____dash_data['ban_isi_baru_mobil'] ;
-		$____dash_total_waktu = abs(substr($____dash_data['waktu'],0,2))*60 + abs(substr($____dash_data['waktu'],3,5));
-		if(abs($____dash_total_waktu - $total_menit) < $_global_selisih_menit_online){$____status_outlet[$____dash_counter_data] = 1;$____dash_counter_status++;}
-    else{$____status_outlet[$____dash_counter_data] = 0;}  
-    $____dash_waktu[$____dash_counter_data] 							= abs($____dash_total_waktu - $total_menit);
-    $____dash_grafik_omset 															 .= $____total_omset_outlet[$____dash_counter_data].",";
-		$____dash_counter_data++;
+		for($___konter_pol = 0; $___konter_pol < $___dash_counter_data; $___konter_pol++){
+		    if($___dash_code_id[$___konter_pol] == $____dash_device_id[$____dash_counter_data] ){
+        		$____dash_ban_tambah_motor[$____dash_counter_data] 		= $____dash_data['ban_tambah_motor'];
+        		$____dash_ban_tambah_mobil[$____dash_counter_data] 		= $____dash_data['ban_tambah_mobil'];
+        		$____dash_ban_isi_baru_motor[$____dash_counter_data] 	= $____dash_data['ban_isi_baru_motor'];
+        		$____dash_ban_isi_baru_mobil[$____dash_counter_data] 	= $____dash_data['ban_isi_baru_mobil'];
+        		$____total_omset_outlet[$____dash_counter_data] 			= $____dash_data['ban_tambah_motor'] * $___dash_hrg_tambah_motor[$____dash_counter_data] + $____dash_data['ban_tambah_mobil'] * $___dash_hrg_tambah_mobil[$____dash_counter_data] + $____dash_data['ban_isi_baru_motor'] * $___dash_hrg_isi_baru_motor[$____dash_counter_data] + $____dash_data['ban_isi_baru_mobil'] * $___dash_hrg_isi_baru_mobil[$____dash_counter_data] ;
+        		if($____total_omset_outlet[$____dash_counter_data] > $____total_max_omset){$____total_max_omset = $____total_omset_outlet[$____dash_counter_data];}
+        		$____total_ban_outlet[$____dash_counter_data] 				= $____dash_data['ban_tambah_motor'] + $____dash_data['ban_tambah_mobil'] + $____dash_data['ban_isi_baru_motor'] + $____dash_data['ban_isi_baru_mobil'] ;
+        		$____dash_total_waktu = abs(substr($____dash_data['waktu'],0,2))*60 + abs(substr($____dash_data['waktu'],3,5));
+        		if(abs($____dash_total_waktu - $total_menit) < $_global_selisih_menit_online){$____status_outlet[$____dash_counter_data] = 1;$____dash_counter_status++;}
+                else{$____status_outlet[$____dash_counter_data] = 0;}  
+                $____dash_waktu[$____dash_counter_data] 							= abs($____dash_total_waktu - $total_menit);
+                $____dash_grafik_omset 															 .= $____total_omset_outlet[$____dash_counter_data].",";
+        		$____dash_counter_data++;
+		        
+		    }
+		}
 	}
 	$____dash_grafik_omset = substr($____dash_grafik_omset, 0 , -1);
 

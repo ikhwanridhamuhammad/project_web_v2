@@ -103,17 +103,21 @@
                             <a href="#" data-toggle="modal" data-target="<?php echo "#modal".$_free_isi; ?>">
                             <span class="badge badge-info"><?php echo $nama1.$shift1; ?></a></span>
                             <?php if(!empty($nama1)){$_free_isi++;} ?>
+                            
                             <a href="#" data-toggle="modal" data-target="<?php echo "#modal".$_free_isi; ?>">
                             <span class="badge badge-warning"><?php echo $nama2.$shift2; ?></a></span>
                             <?php if(!empty($nama2)){$_free_isi++;} ?>
-                            <?php echo $nama3;?>
-                            <span class="badge badge-info"><?php echo $shift3; ?></span>
+                            
+                            <a href="#" data-toggle="modal" data-target="<?php echo "#modal".$_free_isi; ?>">
+                            <span class="badge badge-warning"><?php echo $nama3.$shift3; ?></a></span>
                             <?php if(!empty($nama3)){$_free_isi++;} ?>
-                            <?php echo $nama4;?>
-                            <span class="badge badge-info"><?php echo $shift4; ?></span>
+                            
+                            <a href="#" data-toggle="modal" data-target="<?php echo "#modal".$_free_isi; ?>">
+                            <span class="badge badge-warning"><?php echo $nama4.$shift4; ?></a></span>
                             <?php if(!empty($nama4)){$_free_isi++;} ?>
-                            <?php echo $nama5;?>
-                            <span class="badge badge-info"><?php echo $shift5; ?></span>
+                            
+                            <a href="#" data-toggle="modal" data-target="<?php echo "#modal".$_free_isi; ?>">
+                            <span class="badge badge-warning"><?php echo $nama5.$shift5; ?></a></span>
                             <?php if(!empty($nama5)){$_free_isi++;} ?>
 
                           </td>

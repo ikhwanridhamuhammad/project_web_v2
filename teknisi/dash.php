@@ -60,7 +60,7 @@
                 <table  id="tabel_dash_1" class="table table-striped table-valign-middle">
                   <thead>
                   <tr> 
-                    <th style="text-align: center; width:20%">Status</th>
+                    <th style="text-align: center; width:10%">KET</th>
                     <th style="text-align: center">Nama Outlet</th>
                   </tr>
                   </thead>
@@ -77,7 +77,7 @@
                             <?php } ?>  
                           </td>
                           <td><b>
-                            <?php echo substr($____dash_name[$_free_counter],0,8)." "; ?>
+                            <?php echo substr($____dash_name[$_free_counter],0,10)." "; ?>
                                 <span class="badge badge-warning"><?php echo $____dash_waktu[$_free_counter]." Mnt"; ?></span>&nbsp;
                                 <span class="badge badge-primary"><?php echo $____dash_waktu_ori[$_free_counter]; ?></span>&nbsp;
                                 <span class="badge badge-warning">
@@ -88,7 +88,14 @@
                                 <span class="badge badge-success"><?php echo $____dash_user_id[$_free_counter]; ?></span>&nbsp;
                                 <span class="badge badge-primary"><i class="fas fa-motorcycle"></i>&nbsp;<?php echo $____total_ban_motor[$_free_counter]; ?></span>&nbsp;
                                 <span class="badge badge-primary"><i class="fas fa-car"></i>&nbsp;<?php echo $____total_ban_mobil[$_free_counter]; ?></span>
-                                &nbsp;<span class="badge badge-warning"><?php echo $____tanggal_isi_paket[$_free_counter]; ?></span>
+                                &nbsp;
+                                <span class="badge badge-warning"><?php echo $____tanggal_isi_paket[$_free_counter]; ?></span>
+                                <span class="badge badge-warning">
+                                <a href="tel:<?php echo $____nomor_hp[$_free_counter]; ?>">
+                                    <?php echo $____nomor_hp[$_free_counter]; ?></a></span>
+                              
+                              
+                              
                           </b></td>
                         </tr>
                     <?php } ?>

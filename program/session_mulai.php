@@ -49,6 +49,9 @@
 	$_SESSION["_su_edit_id_admin"] = "";
 	$_SESSION["_su_edit_action_admin"] = "";
 	//======================================================
+	$_SESSION["_ex_sen_outlet"] = "";
+	$_SESSION["_ex_sen_tgl"] = "";
+	//======================================================
 	// echo "session sudah di buat";
 	
 ?>

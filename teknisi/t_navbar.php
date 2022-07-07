@@ -77,6 +77,9 @@ scrollMSG();
             <a href="./data_sn_real.php" class="nav-link"><i class="fas fa-random"></i> Data SN Real</a>
           </li>
           <li class="nav-item">
+            <a href="./extension_sensor.php" class="nav-link"><i class="fas fa-eye"></i> EXT Sensor</a>
+          </li>
+          <li class="nav-item">
             <a href="./paket_data.php" class="nav-link"><i class="fas fa-bullhorn"></i> Paket Data</a>
           </li>
           <li class="nav-item">
